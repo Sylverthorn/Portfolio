@@ -1,242 +1,412 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Globe, Server, Code, Eye, Lock, Network, X, Cpu, Terminal } from 'lucide-react';
+import { Server, Network, Code, Shield, Eye, X, ChevronRight, User } from 'lucide-react';
 
-// Data Details
-const SKILL_DATA = {
-  "admin-sys": {
-    title: "Administrer les réseaux et l'Internet",
+const SKILLS_DATA = {
+  // BRANCH 1: Fondamentaux (Gauche - Bleu)
+  "admin-network": {
+    id: "admin-network",
+    name: "Administrer les réseaux et l'Internet",
+    branch: "fondamental",
     icon: Server,
     color: "rpg-mana",
-    desc: "Mise en place et gestion d'infrastructures systèmes complexes. Administration de serveurs et services réseaux essentiels.",
-    techs: ["Linux (Debian/RedHat)", "Windows Server (AD, DNS, DHCP)", "Virtualisation (Proxmox, VMware)", "Docker"]
+    description: "Maîtrise de l'administration des infrastructures réseaux et des services Internet. Gestion des serveurs, protocoles et équipements d'interconnexion.",
+    details: [
+      "Configuration et maintenance de serveurs Linux/Windows",
+      "Gestion des services essentiels (DNS, DHCP, Active Directory)",
+      "Administration des équipements Cisco (Routeurs, Switches)",
+      "Déploiement et supervision d'infrastructures virtualisées"
+    ],
+    techs: ["Linux", "Windows Server", "Cisco IOS", "Virtualisation", "Docker"]
   },
-  "connect": {
-    title: "Connecter les entreprises",
+  "connect-users": {
+    id: "connect-users",
+    name: "Connecter les entreprises et les usagers",
+    branch: "fondamental",
     icon: Network,
     color: "rpg-mana",
-    desc: "Conception et déploiement d'architectures réseaux LAN/WAN. Interconnexion de sites distants et gestion du trafic.",
-    techs: ["Cisco IOS", "Routage (OSPF, BGP)", "Commutation (VLAN, STP)", "VPN / Tunneling"]
+    description: "Conception et déploiement d'architectures réseau pour interconnecter sites distants et usagers. Garantie de la qualité de service et de la disponibilité.",
+    details: [
+      "Architecture LAN/WAN et plans d'adressage IP",
+      "Configuration de VLANs et segmentation réseau",
+      "Mise en place de VPN pour l'accès distant",
+      "Optimisation des flux et gestion de la QoS"
+    ],
+    techs: ["VLAN", "VPN", "OSPF", "BGP", "QoS", "Téléphonie IP"]
   },
-  "tools": {
-    title: "Créer des outils R&T",
+  "create-tools": {
+    id: "create-tools",
+    name: "Créer des outils et applications informatiques",
+    branch: "fondamental",
     icon: Code,
     color: "rpg-mana",
-    desc: "Développement de scripts d'automatisation et d'applications métiers pour la supervision et la gestion.",
-    techs: ["Python", "Bash Scripting", "Git / GitLab", "Web (HTML/CSS/JS)"]
+    description: "Développement d'outils personnalisés pour automatiser les tâches d'administration et améliorer la gestion des infrastructures R&T.",
+    details: [
+      "Scripts d'automatisation en Python et Bash",
+      "Développement d'interfaces web pour la supervision",
+      "Intégration continue et gestion de versions",
+      "APIs REST pour la gestion d'équipements"
+    ],
+    techs: ["Python", "Bash", "JavaScript", "Git", "API REST", "Ansible"]
   },
-  "cyber-admin": {
-    title: "Administrer un SI Sécurisé",
-    icon: Lock,
+
+  // BRANCH 2: Cybersécurité (Droite - Rouge)
+  "secure-admin": {
+    id: "secure-admin",
+    name: "Administrer un SI sécurisé",
+    branch: "cyber",
+    icon: Shield,
     color: "rpg-crimson",
-    desc: "Durcissement des systèmes et mise en oeuvre de politiques de sécurité strictes pour protéger l'intégrité des données.",
-    techs: ["Firewalling (Pfsense, Fortinet)", "Hardening Système", "Segmentation Réseau", "Chiffrement (PKI)"]
+    requires: ["center"],
+    description: "Mise en œuvre de politiques de sécurité strictes pour protéger l'intégrité des systèmes d'information. Durcissement et segmentation.",
+    details: [
+      "Hardening des systèmes et services",
+      "Configuration de pare-feu et règles de filtrage",
+      "Gestion des identités et contrôle d'accès (IAM)",
+      "Chiffrement des communications et des données"
+    ],
+    techs: ["Firewall", "PKI", "IPsec", "ACL", "SELinux", "Segmentation"]
   },
-  "cyber-watch": {
-    title: "Surveiller un SI Sécurisé",
+  "monitor-security": {
+    id: "monitor-security",
+    name: "Surveiller un SI sécurisé",
+    branch: "cyber",
     icon: Eye,
     color: "rpg-crimson",
-    desc: "Surveillance active des flux et détection d'intrusions. Analyse post-incident et veille technologique.",
-    techs: ["SIEM", "IDS / IPS (Suricata)", "Analyse de Logs", "Wireshark / Packet Analysis"]
-  },
+    requires: ["center"],
+    description: "Surveillance active des flux et détection des anomalies. Analyse d'incidents et réponse aux menaces en temps réel.",
+    details: [
+      "Déploiement de solutions SIEM",
+      "Configuration d'IDS/IPS (Suricata, Snort)",
+      "Analyse de logs et corrélation d'événements",
+      "Forensics et investigation post-incident"
+    ],
+    techs: ["SIEM", "IDS/IPS", "Wireshark", "ELK Stack", "Splunk", "Threat Intel"]
+  }
 };
 
-const SkillNode = ({ id, x, y, onClick, connections = [] }) => {
-  const skill = SKILL_DATA[id];
-  const Icon = skill.icon;
-  const color = skill.color;
-
+const CenterAvatar = ({ onClick }) => {
   return (
-    <div className="absolute" style={{ left: `${x}%`, top: `${y}%`, transform: 'translate(-50%, -50%)' }}>
-      
-      {/* Connections (Lines) */}
-      <svg className="absolute top-1/2 left-1/2 overflow-visible pointer-events-none -z-10 w-full h-full">
-         {connections.map((targetId, idx) => {
-            // Very simple calculation assuming target positions are known or strictly layout based.
-            // For a static SVG approach within the component, we usually need coordinates. 
-            // Here we will use a different approach for lines in the main component.
-            return null; 
-         })}
-      </svg>
+    <motion.div
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer group"
+      initial={{ scale: 0, rotate: -180 }}
+      animate={{ scale: 1, rotate: 0 }}
+      transition={{ type: "spring", stiffness: 150, damping: 15 }}
+      whileHover={{ scale: 1.05 }}
+    >
+      {/* Outer Glow Ring */}
+      <motion.div
+        className="absolute inset-0 rounded-full bg-gradient-to-r from-rpg-mana via-rpg-gold to-rpg-crimson opacity-30 blur-2xl"
+        animate={{ 
+          rotate: 360,
+          scale: [1, 1.1, 1]
+        }}
+        transition={{ 
+          rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+          scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+        }}
+      />
 
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => onClick(skill)}
-        className={`relative group w-20 h-20 md:w-24 md:h-24 rounded-full bg-black/80 border-2 border-${color} flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] z-20 cursor-pointer transition-all duration-300 hover:shadow-[0_0_25px_currentColor] text-${color}`}
-      >
-        <Icon size={32} md:size={40} />
+      {/* Avatar Container */}
+      <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-rpg-slate to-black border-4 border-rpg-gold shadow-[0_0_40px_rgba(255,215,0,0.4)] flex items-center justify-center overflow-hidden">
         
-        {/* Pulsing Glitch Effect Behind */}
-        <div className={`absolute inset-0 rounded-full border border-${color} opacity-0 group-hover:opacity-100 animate-ping -z-10`} />
-      </motion.button>
-      
-      <div className={`absolute top-full mt-4 left-1/2 -translate-x-1/2 w-48 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
-        <div className={`bg-black/90 text-${color} text-xs font-display border border-${color}/30 px-2 py-1 uppercase tracking-wider`}>
-            {skill.title}
+        {/* Inner Circles */}
+        <div className="absolute inset-2 rounded-full border border-rpg-gold/30" />
+        <div className="absolute inset-4 rounded-full border border-rpg-gold/20" />
+        
+        {/* Icon */}
+        <User size={48} className="text-rpg-gold z-10" strokeWidth={1.5} />
+        
+        {/* Rotating Border */}
+        <motion.div
+          className="absolute inset-0 rounded-full"
+          style={{
+            background: 'conic-gradient(from 0deg, transparent 0%, rgba(255, 215, 0, 0.4) 50%, transparent 100%)'
+          }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
+
+      {/* Label */}
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
+        <div className="bg-black/95 border border-rpg-gold px-4 py-1 text-xs font-display uppercase tracking-[0.3em] text-rpg-gold backdrop-blur-sm">
+          Y. KORICHI
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-// SVG Connector Component
-const Connector = ({ start, end, color = "white" }) => {
-    // start and end are {x, y} percentages
-    // We need to convert to rough pixels or use strict SVG coordinate space relative to container
-    // For simplicity in this responsive layout, we'll use a full size SVG overlay
-    
-    return (
-        <line 
-            x1={`${start.x}%`} 
-            y1={`${start.y}%`} 
-            x2={`${end.x}%`} 
-            y2={`${end.y}%`} 
-            stroke={color === 'rpg-mana' ? '#00ccff' : '#ff3333'} 
-            strokeWidth="2" 
-            strokeDasharray="5,5"
-            className="animate-pulse opacity-40"
-        />
-    );
+const SkillNode = ({ skill, position, onSelect, isSelected }) => {
+  const Icon = skill.icon;
+  const colorClass = skill.color === 'rpg-mana' 
+    ? 'border-rpg-mana text-rpg-mana shadow-[0_0_15px_rgba(0,204,255,0.3)]' 
+    : 'border-rpg-crimson text-rpg-crimson shadow-[0_0_15px_rgba(255,51,51,0.3)]';
+  const bgClass = skill.color === 'rpg-mana' ? 'from-rpg-mana/20' : 'from-rpg-crimson/20';
+
+  return (
+    <motion.div
+      className="absolute cursor-pointer z-20"
+      style={{ left: `${position.x}%`, top: `${position.y}%`, transform: 'translate(-50%, -50%)' }}
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ delay: position.delay || 0, type: "spring", stiffness: 200 }}
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={() => onSelect(skill)}
+    >
+      <div className="relative group">
+        {/* Glow Effect when selected */}
+        {isSelected && (
+          <motion.div
+            className={`absolute inset-0 rounded-full bg-gradient-radial ${bgClass} to-transparent blur-xl -z-10`}
+            animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0.8, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        )}
+
+        {/* Node Circle */}
+        <div className={`relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-black/90 border-2 ${colorClass} flex items-center justify-center transition-all duration-300 ${isSelected ? 'scale-110 border-4' : ''}`}>
+          <Icon size={28} strokeWidth={1.5} />
+          
+          {/* Pulse Ring on Hover */}
+          <div className={`absolute inset-0 rounded-full border ${skill.color === 'rpg-mana' ? 'border-rpg-mana' : 'border-rpg-crimson'} opacity-0 group-hover:opacity-100 animate-ping`} />
+        </div>
+
+        {/* Hover Label */}
+        <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 w-48 text-center pointer-events-none">
+          <div className={`bg-black/95 backdrop-blur-sm border ${skill.color === 'rpg-mana' ? 'border-rpg-mana/40' : 'border-rpg-crimson/40'} px-2 py-1 text-[10px] font-display uppercase tracking-wider ${skill.color === 'rpg-mana' ? 'text-rpg-mana' : 'text-rpg-crimson'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+            {skill.name.length > 30 ? skill.name.substring(0, 30) + '...' : skill.name}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const BranchConnection = ({ from, to, color, delay = 0 }) => {
+  const strokeColor = color === 'rpg-mana' ? '#00ccff' : '#ff3333';
+
+  return (
+    <motion.line
+      x1={`${from.x}%`}
+      y1={`${from.y}%`}
+      x2={`${to.x}%`}
+      y2={`${to.y}%`}
+      stroke={strokeColor}
+      strokeWidth="2.5"
+      strokeDasharray="8,4"
+      strokeOpacity="0.5"
+      initial={{ pathLength: 0, opacity: 0 }}
+      animate={{ pathLength: 1, opacity: 0.5 }}
+      transition={{ duration: 1.5, delay, ease: "easeInOut" }}
+    />
+  );
 };
 
 const SkillTree = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
 
-  // Position Configuration (Responsive % based)
-  const NODE_POSITIONS = {
-    // Level 1: Foundations (Bottom)
-    'admin-sys': { x: 35, y: 80, color: 'rpg-mana' },
-    'connect': { x: 65, y: 80, color: 'rpg-mana' },
-    
-    // Level 2: Tools (Middle)
-    'tools': { x: 50, y: 50, color: 'rpg-mana' },
-    
-    // Level 3: Cyber (Top)
-    'cyber-admin': { x: 35, y: 20, color: 'rpg-crimson' },
-    'cyber-watch': { x: 65, y: 20, color: 'rpg-crimson' }
+  // Position centrale
+  const CENTER = { x: 50, y: 50 };
+
+  // Positions en éventail depuis le centre
+  const POSITIONS = {
+    // LEFT BRANCH: Fondamental (Bleu) - Arc gauche
+    "admin-network": { x: 15, y: 30, delay: 0.3 },
+    "connect-users": { x: 10, y: 50, delay: 0.4 },
+    "create-tools": { x: 15, y: 70, delay: 0.5 },
+
+    // RIGHT BRANCH: Cybersécurité (Rouge) - Arc droit
+    "secure-admin": { x: 85, y: 40, delay: 0.6 },
+    "monitor-security": { x: 85, y: 60, delay: 0.7 }
   };
 
-  const CONNECTIONS = [
-    { start: 'admin-sys', end: 'tools', color: 'rpg-mana' },
-    { start: 'connect', end: 'tools', color: 'rpg-mana' },
-    { start: 'tools', end: 'cyber-admin', color: 'rpg-crimson' },
-    { start: 'tools', end: 'cyber-watch', color: 'rpg-crimson' },
-    // Cross connections?
-    { start: 'cyber-admin', end: 'cyber-watch', color: 'rpg-crimson' }
+  // Connections depuis le centre vers chaque nœud
+  const connections = [
+    // Left Branch (Fondamental - Blue)
+    { from: CENTER, to: POSITIONS["admin-network"], color: "rpg-mana", delay: 0.3 },
+    { from: CENTER, to: POSITIONS["connect-users"], color: "rpg-mana", delay: 0.4 },
+    { from: CENTER, to: POSITIONS["create-tools"], color: "rpg-mana", delay: 0.5 },
+
+    // Right Branch (Cyber - Red)
+    { from: CENTER, to: POSITIONS["secure-admin"], color: "rpg-crimson", delay: 0.6 },
+    { from: CENTER, to: POSITIONS["monitor-security"], color: "rpg-crimson", delay: 0.7 },
   ];
 
   return (
-    <div className="pt-20 pb-20 px-4 h-[calc(100vh-80px)] overflow-hidden relative">
+    <div className="pt-20 pb-20 px-4 min-h-screen flex flex-col relative overflow-hidden">
       
-      <h2 className="text-3xl md:text-4xl text-center text-rpg-gold font-display mb-8 drop-shadow-neon-gold z-30 relative pointer-events-none">
-        ARBRE DE PROTOCOLES
-      </h2>
+      {/* Header */}
+      <div className="text-center mb-6 z-30 relative">
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl md:text-5xl text-rpg-gold font-display tracking-[0.3em] drop-shadow-neon-gold mb-2"
+        >
+          ARBRE DE COMPÉTENCES
+        </motion.h2>
+        <p className="text-rpg-muted font-mono text-sm">CLICK_NODE_TO_UNLOCK_DETAILS</p>
+      </div>
 
       {/* Tree Container */}
-      <div className="w-full max-w-4xl mx-auto h-[600px] relative bg-rpg-slate/20 border border-rpg-gold/10 rounded-xl backdrop-blur-sm shadow-2xl overflow-hidden mt-8">
+      <div className="flex-1 relative max-w-7xl mx-auto w-full min-h-[600px]">
         
-        {/* Background Grid */}
-        <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(0,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        {/* Background */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-rpg-gold/5 via-transparent to-transparent pointer-events-none" />
+        
+        {/* Subtle Grid */}
+        <div className="absolute inset-0 opacity-5 bg-[linear-gradient(rgba(255,215,0,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,215,0,0.2)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-        {/* SVG Layer for Connections */}
+        {/* SVG Connections */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
-          {CONNECTIONS.map((conn, i) => (
-             <Connector 
-                key={i} 
-                start={NODE_POSITIONS[conn.start]} 
-                end={NODE_POSITIONS[conn.end]} 
-                color={conn.color} 
-             />
+          {connections.map((conn, i) => (
+            <BranchConnection
+              key={i}
+              from={conn.from}
+              to={conn.to}
+              color={conn.color}
+              delay={conn.delay}
+            />
           ))}
         </svg>
 
-        {/* Nodes */}
-        {Object.keys(NODE_POSITIONS).map((key) => (
-            <SkillNode 
-                key={key}
-                id={key}
-                x={NODE_POSITIONS[key].x}
-                y={NODE_POSITIONS[key].y}
-                onClick={setSelectedSkill}
-            />
-        ))}
+        {/* Branch Labels */}
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5 }}
+          className="absolute left-8 top-1/2 -translate-y-1/2 z-5"
+        >
+          <div className="flex items-center gap-3 rpg-card px-4 py-2 bg-rpg-mana/10 border-rpg-mana">
+            <div className="w-3 h-3 rounded-full bg-rpg-mana animate-pulse" />
+            <span className="text-rpg-mana font-display text-sm tracking-[0.3em] uppercase">Fondamental</span>
+          </div>
+        </motion.div>
 
-        {/* Decorative Corner Stats */}
-        <div className="absolute bottom-4 left-4 font-mono text-xs text-rpg-mana">
-            SYSTEM_INTEGRITY: 100%<br/>
-            NODES_ACTIVE: 5/5
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6 }}
+          className="absolute right-8 top-1/2 -translate-y-1/2 z-5"
+        >
+          <div className="flex items-center gap-3 rpg-card px-4 py-2 bg-rpg-crimson/10 border-rpg-crimson">
+            <span className="text-rpg-crimson font-display text-sm tracking-[0.3em] uppercase">Cybersécurité</span>
+            <div className="w-3 h-3 rounded-full bg-rpg-crimson animate-pulse" />
+          </div>
+        </motion.div>
+
+        {/* Central Avatar */}
+        <CenterAvatar />
+
+        {/* Skill Nodes */}
+        {Object.values(SKILLS_DATA).map(skill => (
+          <SkillNode
+            key={skill.id}
+            skill={skill}
+            position={POSITIONS[skill.id]}
+            onSelect={setSelectedSkill}
+            isSelected={selectedSkill?.id === skill.id}
+          />
+        ))}
       </div>
 
-      {/* MODAL / SIDE PANEL */}
+      {/* Detail Panel (Side Drawer) - KEPT AS IS */}
       <AnimatePresence>
         {selectedSkill && (
-          <motion.div 
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
-            className="fixed inset-y-0 right-0 w-full md:w-[450px] bg-black/95 border-l-2 border-rpg-gold shadow-[0_0_50px_rgba(0,0,0,0.8)] z-50 p-8 overflow-y-auto"
-          >
-             <button 
-                onClick={() => setSelectedSkill(null)}
-                className="absolute top-4 right-4 text-rpg-muted hover:text-rpg-crimson transition-colors"
-             >
-                <X size={32} />
-             </button>
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedSkill(null)}
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
+            />
 
-             <div className="mt-8 space-y-6">
-                <div className={`w-16 h-16 rounded-lg bg-black border border-${selectedSkill.color} flex items-center justify-center mx-auto shadow-[0_0_20px_rgba(0,0,0,0.5)]`}>
-                    <selectedSkill.icon className={`text-${selectedSkill.color}`} size={32} />
-                </div>
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed right-0 top-0 h-full w-full md:w-[500px] bg-rpg-slate/98 border-l-2 border-rpg-gold shadow-[-10px_0_50px_rgba(0,0,0,0.8)] z-50 overflow-y-auto"
+            >
+              <div className={`p-6 border-b ${selectedSkill.color === 'rpg-mana' ? 'border-rpg-mana/30 bg-gradient-to-r from-rpg-mana/10' : 'border-rpg-crimson/30 bg-gradient-to-r from-rpg-crimson/10'} to-transparent relative`}>
+                <button
+                  onClick={() => setSelectedSkill(null)}
+                  className="absolute top-4 right-4 text-rpg-text hover:text-rpg-crimson transition-colors p-2"
+                >
+                  <X size={24} />
+                </button>
 
-                <div className="text-center">
-                    <h3 className={`text-2xl font-display font-bold text-${selectedSkill.color} uppercase mb-2`}>
-                        {selectedSkill.title}
+                <div className="flex items-start gap-4">
+                  <div className={`p-3 rounded-lg border-2 ${selectedSkill.color === 'rpg-mana' ? 'border-rpg-mana bg-rpg-mana/10' : 'border-rpg-crimson bg-rpg-crimson/10'}`}>
+                    <selectedSkill.icon size={32} className={selectedSkill.color === 'rpg-mana' ? 'text-rpg-mana' : 'text-rpg-crimson'} />
+                  </div>
+                  <div className="flex-1">
+                    <div className={`text-xs font-mono ${selectedSkill.color === 'rpg-mana' ? 'text-rpg-mana' : 'text-rpg-crimson'} mb-1`}>
+                      {selectedSkill.branch === 'fondamental' ? '[ FONDAMENTAL ]' : '[ CYBERSÉCURITÉ ]'}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-display text-white leading-tight">
+                      {selectedSkill.name}
                     </h3>
-                    <div className="w-24 h-1 bg-gradient-to-r from-transparent via-rpg-text to-transparent mx-auto opacity-30"></div>
+                  </div>
                 </div>
+              </div>
 
-                <div className="rpg-card p-4 bg-rpg-slate/50">
-                    <p className="text-rpg-text font-sans leading-relaxed text-sm">
-                        {selectedSkill.desc}
-                    </p>
+              <div className="p-6 space-y-6">
+                <div>
+                  <h4 className="text-rpg-gold font-display text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <ChevronRight size={16} /> Synopsis
+                  </h4>
+                  <p className="text-rpg-text leading-relaxed font-sans">
+                    {selectedSkill.description}
+                  </p>
                 </div>
 
                 <div>
-                    <h4 className="flex items-center gap-2 text-rpg-gold font-display text-lg mb-4">
-                        <Terminal size={18} /> STACK TECHNIQUE
-                    </h4>
-                    <div className="grid grid-cols-1 gap-2">
-                        {selectedSkill.techs.map((tech, i) => (
-                            <div key={i} className="flex items-center gap-3 p-2 bg-black/40 border border-white/5 rounded hover:border-rpg-gold/30 transition-colors">
-                                <Cpu size={14} className="text-rpg-muted" />
-                                <span className="font-mono text-xs text-rpg-text">{tech}</span>
-                            </div>
-                        ))}
-                    </div>
+                  <h4 className="text-rpg-gold font-display text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <ChevronRight size={16} /> Capacités
+                  </h4>
+                  <ul className="space-y-2">
+                    {selectedSkill.details.map((detail, i) => (
+                      <motion.li
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.1 }}
+                        className="flex items-start gap-3 text-sm text-rpg-text"
+                      >
+                        <span className={`mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0 ${selectedSkill.color === 'rpg-mana' ? 'bg-rpg-mana' : 'bg-rpg-crimson'}`} />
+                        {detail}
+                      </motion.li>
+                    ))}
+                  </ul>
                 </div>
 
-                <div className="pt-8 mt-8 border-t border-white/10 text-center">
-                    <button className="rpg-btn w-full">
-                        VOIR LES PROJETS ASSOCIÉS
-                    </button>
+                <div>
+                  <h4 className="text-rpg-gold font-display text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <ChevronRight size={16} /> Stack Technique
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedSkill.techs.map((tech, i) => (
+                      <motion.span
+                        key={i}
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.5 + i * 0.05 }}
+                        className="px-3 py-1.5 bg-black/60 border border-rpg-gold/30 text-rpg-gold font-mono text-xs rounded-sm hover:border-rpg-gold/60 transition-colors"
+                      >
+                        {tech}
+                      </motion.span>
+                    ))}
+                  </div>
                 </div>
-             </div>
-          </motion.div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
-
-      {/* Backdrop for Modal */}
-      {selectedSkill && (
-        <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedSkill(null)}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
-        />
-      )}
     </div>
   );
 };
