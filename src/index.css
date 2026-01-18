@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-rpg-dark text-rpg-text font-sans antialiased overflow-x-hidden;
+    /* Grid Background */
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 215, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-rpg-gold tracking-widest uppercase;
+  }
+}
+
+@layer components {
+  /* Tech Borders & Panels */
+  .rpg-border {
+    @apply border border-rpg-gold/40 shadow-[0_0_10px_rgba(255,215,0,0.1)];
+  }
+  
+  .rpg-card {
+    @apply bg-rpg-slate/80 backdrop-blur-md border border-rpg-gold/20 relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Decorative Corner for Tech Look */
+  .rpg-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-rpg-gold;
+  }
+  .rpg-card::after {
+    content: '';
+    @apply absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-rpg-gold;
+  }
+
+  .rpg-btn {
+    @apply relative px-6 py-2 bg-rpg-slate border border-rpg-gold/50 text-rpg-gold font-display tracking-widest uppercase text-sm
+    transition-all duration-300 hover:bg-rpg-gold/10 hover:border-rpg-gold hover:shadow-neon-gold
+    active:translate-y-px;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+  }
+
+  .rpg-input {
+    @apply bg-black/50 border border-rpg-goldDim/50 text-rpg-text p-2 font-mono focus:border-rpg-gold focus:shadow-neon-gold outline-none transition-all duration-300;
+  }
+}
+
+/* Scanline Animation */
+.scanline {
+  width: 100%;
+  height: 100px;
+  z-index: 10;
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(255, 215, 0, 0.1) 50%, rgba(0,0,0,0) 100%);
+  opacity: 0.1;
+  position: fixed;
+  bottom: 100%;
+  animation: scanline 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% { bottom: 100%; }
+  100% { bottom: -100px; }
+}

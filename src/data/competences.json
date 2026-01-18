@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sys_linux",
+    "name": "Administration Linux",
+    "type": "system",
+    "level": 3,
+    "description": "Gestion avancée des serveurs Debian/RedHat.",
+    "icon": "terminal"
+  },
+  {
+    "id": "net_cisco",
+    "name": "Réseaux Cisco",
+    "type": "network",
+    "level": 2,
+    "description": "Configuration switch/routeur, VLAN, STP.",
+    "icon": "network"
+  },
+  {
+    "id": "sec_pentest",
+    "name": "Pentest Basique",
+    "type": "security",
+    "level": 1,
+    "description": "Scan de vulnérabilités, Nmap, Burp Suite.",
+    "icon": "shield"
+  }
+]

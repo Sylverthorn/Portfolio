@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Le Labyrinthe Docker",
+    "description": "Déploiement d'une stack complète avec Docker Compose.",
+    "reward": "Expérience Conteneurisation +50",
+    "status": "completed",
+    "tech": ["Docker", "Nginx", "Python"]
+  },
+  {
+    "id": 2,
+    "title": "La Citadelle Active Directory",
+    "description": "Mise en place d'un domaine Windows Server sécurisé.",
+    "reward": "Expérience Windows +100",
+    "status": "in_progress",
+    "tech": ["Windows Server", "PowerShell", "AD DS"]
+  }
+]

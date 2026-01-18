@@ -1,17 +1,33 @@
-# Cartographie des Contenus
+# Plan du Site (Structure Tech-RPG)
 
-## Identité
-- Nom : KORICHI Yanis
-- Spécialité : Cybersécurité (BUT R&T)
-- Mots-clés : Créatif, Déterminé, Curieux
+## Navigation (HUD)
+Le menu est persistant en bas d'écran. Les barres de statut sont en haut.
 
-## Projets Majeurs (SAE)
-- **Cyber :** SAE 3.Cyber.04 (Pentesting), SAE 4.Cyber.01 (Sécurisation SI).
-- **Réseaux :** SAE 2.01 (Architecture réseau PME), SAE 3.01 (Systèmes de transmission).
-- **Dev :** SAE 2.03 (Applications pour l'entreprise).
+1. **HUB (Accueil)**
+   - **Visuel** : Ambiance "Boot Sequence", Cercle de chargement holographique.
+   - **Contenu** : Message de bienvenue "System Online", Titre, Rôle.
+   - **Action** : Bouton "Initialize Interface".
 
-## Navigation du site
-1. **Home :** Terminal de bienvenue + stats 16-bit.
-2. **Compétences :** Visualisation par UE (Administrer, Connecter, Programmer, Sécuriser).
-3. **Vault (SAE) :** Grille filtrable de tous les projets d'école.
-4. **Docs :** Accès CV, Diplômes, Contact.
+2. **PROFIL (Character)**
+   - **Metaphore** : Fiche d'Opérateur / Dossier Confidentiel.
+   - **Contenu** :
+     - **ID Card** : Photo/Avatar, Niveau, Classe (SysAdmin).
+     - **Modules (Soft Skills)** : Barres de progression (Troubleshooting, Teamwork).
+     - **Logs (Timeline)** : Historique des formations et expériences.
+
+3. **SYSTÈME (Skills)**
+   - **Metaphore** : Arbre de débloquage technologique (Tech Tree).
+   - **Structure** :
+     - **Racines** : Fondamentaux (SysAdmin & Réseaux).
+     - **Tronc** : Outils & Scripting.
+     - **Cime** : Cybersécurité (Admin & Surveillance).
+   - **Interaction** : Clic sur nœud -> Ouvre un volet latéral avec description et stack technique.
+
+4. **PROJETS (Quests)**
+   - **Metaphore** : Journal de missions accomplies.
+   - **Format** : Cartes "Data-Log" avec badges technologiques.
+   - **Filtres** : Par type (Réseau, Dev, Cyber).
+
+5. **CONTACT (Shrine/Uplink)**
+   - **Metaphore** : Terminal de communication sécurisé.
+   - **Formulaire** : Style console de commande / Chat crypté.

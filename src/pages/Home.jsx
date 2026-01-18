@@ -1,0 +1,56 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const Home = () => {
+  return (
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div className="scanline"></div>
+      
+      {/* Central Tech Circle Decoration */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-rpg-gold/10 rounded-full animate-[spin_60s_linear_infinite] pointer-events-none">
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-rpg-gold/20"></div>
+         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-rpg-gold/20"></div>
+         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-rpg-gold/20"></div>
+         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-rpg-gold/20"></div>
+      </div>
+
+      <div className="z-10 text-center space-y-8 p-8 max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="inline-block mb-6 px-4 py-1 text-xs text-rpg-gold border border-rpg-gold/50 bg-rpg-slate shadow-neon-gold font-mono tracking-[0.3em]">
+            SYSTEM_Online_
+          </div>
+          
+          <h1 className="text-6xl md:text-8xl font-display text-white mb-2 drop-shadow-[0_0_25px_rgba(255,215,0,0.3)] tracking-tighter">
+            YANIS KORICHI
+            <span className="text-rpg-gold text-4xl align-top animate-pulse">.</span>
+          </h1>
+          
+          <div className="h-px w-64 bg-gradient-to-r from-transparent via-rpg-gold to-transparent mx-auto mb-6"></div>
+          
+          <p className="text-xl md:text-2xl text-rpg-text font-display uppercase tracking-widest max-w-3xl mx-auto leading-relaxed opacity-80">
+            System Guardian <span className="text-rpg-gold mx-2">//</span> Data Protector <span className="text-rpg-gold mx-2">//</span> Architect
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          <div className="inline-block mt-8">
+             <div className="rpg-btn group cursor-pointer animate-pulse">
+                <span className="group-hover:hidden">INITIALIZE INTERFACE</span>
+                <span className="hidden group-hover:inline">ACCESS GRANTED</span>
+             </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
