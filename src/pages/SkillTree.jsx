@@ -88,7 +88,11 @@ const SKILLS_DATA = {
 const CenterAvatar = ({ onClick }) => {
   return (
     <motion.div
-      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer group"
+      className="absolute left-1/2 top-1/2 z-30 cursor-pointer group"
+      style={{
+        marginLeft: '-80px',
+        marginTop: '-80px'
+      }}
       initial={{ scale: 0, rotate: -180 }}
       animate={{ scale: 1, rotate: 0 }}
       transition={{ type: "spring", stiffness: 150, damping: 15 }}
@@ -148,7 +152,12 @@ const SkillNode = ({ skill, position, onSelect, isSelected }) => {
   return (
     <motion.div
       className="absolute cursor-pointer z-20"
-      style={{ left: `${position.x}%`, top: `${position.y}%`, transform: 'translate(-50%, -50%)' }}
+      style={{ 
+        left: `${position.x}%`, 
+        top: `${position.y}%`,
+        marginLeft: '-40px',
+        marginTop: '-40px'
+      }}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: position.delay || 0, type: "spring", stiffness: 200 }}
@@ -214,13 +223,13 @@ const SkillTree = () => {
   // Positions en éventail depuis le centre
   const POSITIONS = {
     // LEFT BRANCH: Fondamental (Bleu) - Arc gauche
-    "admin-network": { x: 18, y: 28, delay: 0.3 },
-    "connect-users": { x: 12, y: 50, delay: 0.4 },
-    "create-tools": { x: 18, y: 72, delay: 0.5 },
+    "admin-network": { x: 20, y: 30, delay: 0.3 },
+    "connect-users": { x: 15, y: 50, delay: 0.4 },
+    "create-tools": { x: 20, y: 70, delay: 0.5 },
 
     // RIGHT BRANCH: Cybersécurité (Rouge) - Arc droit
-    "secure-admin": { x: 82, y: 38, delay: 0.6 },
-    "monitor-security": { x: 82, y: 62, delay: 0.7 }
+    "secure-admin": { x: 80, y: 40, delay: 0.6 },
+    "monitor-security": { x: 80, y: 60, delay: 0.7 }
   };
 
   // Connections depuis le centre vers chaque nœud
@@ -251,7 +260,7 @@ const SkillTree = () => {
       </div>
 
       {/* Tree Container */}
-      <div className="flex-1 relative max-w-7xl mx-auto w-full min-h-[600px]">
+      <div className="flex-1 relative max-w-7xl mx-auto w-full h-[700px]">
         
         {/* Background */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-rpg-gold/5 via-transparent to-transparent pointer-events-none" />
@@ -277,7 +286,7 @@ const SkillTree = () => {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}
-          className="absolute left-8 top-[35%] -translate-y-1/2 z-5"
+          className="absolute left-8 top-[10%] -translate-y-1/2 z-5"
         >
           <div className="flex items-center gap-3 rpg-card px-4 py-2 bg-rpg-mana/10 border-rpg-mana">
             <div className="w-3 h-3 rounded-full bg-rpg-mana animate-pulse" />
@@ -289,7 +298,7 @@ const SkillTree = () => {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6 }}
-          className="absolute right-8 top-[35%] -translate-y-1/2 z-5"
+          className="absolute right-8 top-[10%] -translate-y-1/2 z-5"
         >
           <div className="flex items-center gap-3 rpg-card px-4 py-2 bg-rpg-crimson/10 border-rpg-crimson">
             <span className="text-rpg-crimson font-display text-sm tracking-[0.3em] uppercase">Cybersécurité</span>
