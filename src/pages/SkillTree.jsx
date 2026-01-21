@@ -10,14 +10,33 @@ const SKILLS_DATA = {
     branch: "fondamental",
     icon: Server,
     color: "rpg-mana",
-    description: "Maîtrise de l'administration des infrastructures réseaux et des services Internet. Gestion des serveurs, protocoles et équipements d'interconnexion.",
+    description: "Conception et administration complète de l'infrastructure réseau informatique d'une entreprise. Installation et déploiement de services réseau pour les clients d'opérateurs de télécommunication, en respectant les principes de sécurité et les règles métiers.",
     details: [
-      "Configuration et maintenance de serveurs Linux/Windows",
-      "Gestion des services essentiels (DNS, DHCP, Active Directory)",
-      "Administration des équipements Cisco (Routeurs, Switches)",
-      "Déploiement et supervision d'infrastructures virtualisées"
+      "Conception de l'infrastructure réseau en choisissant les solutions et technologies adaptées",
+      "Installation et administration des services réseau (DNS, DHCP, Active Directory)",
+      "Déploiement de solutions fixes pour les clients d'opérateurs télécoms",
+      "Intervention sur les équipements réseaux et télécommunications",
+      "Configuration des fonctions de base du réseau local et administration des systèmes d'exploitation",
+      "Identification et résolution rigoureuse des dysfonctionnements réseau",
+      "Installation et configuration de postes clients avec documentation des procédures",
+      "Veille technologique continue pour maintenir les compétences à jour"
     ],
-    techs: ["Linux", "Windows Server", "Cisco IOS", "Virtualisation", "Docker"]
+    competences: [
+      "CE 1.01 : Choix de solutions et technologies réseaux adaptées",
+      "CE 1.02 : Respect des principes de sécurité informatique",
+      "CE 1.03 : Approche rigoureuse de résolution des dysfonctionnements",
+      "CE 1.04 : Respect des règles métiers",
+      "CE 1.05 : Veille technologique active"
+    ],
+    apprentissages: [
+      "AC 11.01 : Maîtrise des lois fondamentales de l'électricité pour intervenir sur les équipements",
+      "AC 11.02 : Compréhension de l'architecture et des fondements des systèmes numériques",
+      "AC 11.03 : Configuration des fonctions de base du réseau local",
+      "AC 11.04 : Maîtrise des systèmes d'exploitation pour la configuration et l'administration",
+      "AC 11.05 : Identification et signalement des dysfonctionnements réseau",
+      "AC 11.06 : Installation de postes clients et documentation des procédures"
+    ],
+    techs: ["Linux", "Windows Server", "Cisco IOS", "DNS", "DHCP", "Active Directory", "Virtualisation", "Docker", "Supervision"]
   },
   "connect-users": {
     id: "connect-users",
@@ -25,14 +44,32 @@ const SKILLS_DATA = {
     branch: "fondamental",
     icon: Network,
     color: "rpg-mana",
-    description: "Conception et déploiement d'architectures réseau pour interconnecter sites distants et usagers. Garantie de la qualité de service et de la disponibilité.",
+    description: "Déploiement complet des infrastructures de transmission pour interconnecter entreprises et usagers. Mise en service des équipements d'accès fixe et mobile, administration des accès sans fil et déploiement des systèmes de communications. Communication avec les clients et acteurs impliqués, parfois en anglais, avec une démarche scientifique rigoureuse.",
     details: [
-      "Architecture LAN/WAN et plans d'adressage IP",
-      "Configuration de VLANs et segmentation réseau",
-      "Mise en place de VPN pour l'accès distant",
-      "Optimisation des flux et gestion de la QoS"
+      "Déploiement et caractérisation des supports et systèmes de transmission",
+      "Mise en service et administration des équipements d'accès fixe ou mobile d'opérateurs télécoms",
+      "Déploiement et administration des accès sans fil pour l'entreprise (Wi-Fi, 4G/5G)",
+      "Déploiement des systèmes de communications unifiées",
+      "Mesure, analyse et documentation des signaux de transmission",
+      "Connexion et configuration des systèmes de ToIP (Téléphonie sur IP)",
+      "Architecture LAN/WAN avec plans d'adressage optimisés",
+      "Proposition de solutions respectueuses de l'environnement",
+      "Communication technique avec clients et collaborateurs, adaptation du discours"
     ],
-    techs: ["VLAN", "VPN", "OSPF", "BGP", "QoS", "Téléphonie IP"]
+    competences: [
+      "CE 2.01 : Communication avec le client et les acteurs impliqués, parfois en anglais",
+      "CE 2.02 : Démarche scientifique dans l'analyse et le déploiement",
+      "CE 2.03 : Choix de solutions et technologies adaptées",
+      "CE 2.04 : Proposition de solutions respectueuses de l'environnement"
+    ],
+    apprentissages: [
+      "AC 12.01 : Mesure, analyse et commentaire des signaux",
+      "AC 12.02 : Caractérisation des systèmes de transmissions et modélisation mathématique",
+      "AC 12.03 : Déploiement des supports de transmission (fibre, cuivre, sans-fil)",
+      "AC 12.04 : Connexion et configuration des systèmes de ToIP",
+      "AC 12.05 : Communication avec tiers et adaptation du discours à l'interlocuteur"
+    ],
+    techs: ["VLAN", "VPN", "OSPF", "BGP", "QoS", "ToIP", "Wi-Fi 6", "Fibre Optique", "SDH/WDM", "4G/5G", "SIP", "Unified Communications"]
   },
   "create-tools": {
     id: "create-tools",
@@ -40,14 +77,34 @@ const SKILLS_DATA = {
     branch: "fondamental",
     icon: Code,
     color: "rpg-mana",
-    description: "Développement d'outils personnalisés pour automatiser les tâches d'administration et améliorer la gestion des infrastructures R&T.",
+    description: "Conception, déploiement et maintenance du système d'information d'une entreprise. Automatisation du déploiement et de la maintenance des outils logiciels. Développement d'outils informatiques à usage interne, en étant à l'écoute des besoins clients et en intégrant les problématiques de sécurité dès la conception.",
     details: [
-      "Scripts d'automatisation en Python et Bash",
-      "Développement d'interfaces web pour la supervision",
-      "Intégration continue et gestion de versions",
-      "APIs REST pour la gestion d'équipements"
+      "Conception et déploiement du système d'information d'entreprise",
+      "Automatisation du déploiement et de la maintenance des outils logiciels",
+      "Développement d'outils informatiques à usage interne d'une équipe",
+      "Utilisation des systèmes informatiques et leurs outils de développement",
+      "Lecture, exécution, correction et modification de programmes existants",
+      "Traduction d'algorithmes dans des langages adaptés à l'environnement",
+      "Conception d'architectures et technologies de sites Web",
+      "Choix et argumentation des mécanismes de gestion de données",
+      "Documentation complète du travail réalisé et intégration au travail collaboratif"
     ],
-    techs: ["Python", "Bash", "JavaScript", "Git", "API REST", "Ansible"]
+    competences: [
+      "CE 3.01 : Écoute active des besoins du client",
+      "CE 3.02 : Documentation rigoureuse du travail réalisé",
+      "CE 3.03 : Utilisation pertinente des outils numériques",
+      "CE 3.04 : Choix des outils de développement adaptés",
+      "CE 3.05 : Intégration des problématiques de sécurité"
+    ],
+    apprentissages: [
+      "AC 13.01 : Utilisation d'un système informatique et ses outils",
+      "AC 13.02 : Lecture, exécution, correction et modification de programmes",
+      "AC 13.03 : Traduction d'algorithmes dans un langage et environnement donné",
+      "AC 13.04 : Connaissance de l'architecture et des technologies d'un site Web",
+      "AC 13.05 : Choix des mécanismes de gestion de données adaptés et argumentation",
+      "AC 13.06 : Intégration dans un environnement de développement collaboratif"
+    ],
+    techs: ["Python", "Bash", "JavaScript", "React", "Node.js", "Git", "API REST", "Ansible", "Docker", "CI/CD", "PostgreSQL", "MongoDB"]
   },
 
   // BRANCH 2: Cybersécurité (Droite - Rouge)
@@ -58,14 +115,36 @@ const SKILLS_DATA = {
     icon: Shield,
     color: "rpg-crimson",
     requires: ["center"],
-    description: "Mise en œuvre de politiques de sécurité strictes pour protéger l'intégrité des systèmes d'information. Durcissement et segmentation.",
+    description: "Analyse de l'existant et étude des besoins de sécurité d'une petite structure. Évolution et mise en conformité du système d'information, en visant un juste compromis entre exigences de sécurité et contraintes d'utilisation. Respect des normes, du cadre juridique et intégration des dernières technologies de cybersécurité.",
     details: [
-      "Hardening des systèmes et services",
-      "Configuration de pare-feu et règles de filtrage",
+      "Analyse de l'existant et identification des besoins de sécurité",
+      "Évolution et mise en conformité du système d'information",
+      "Application des bonnes pratiques et recommandations de cybersécurité",
+      "Mise en œuvre des outils fondamentaux de sécurisation de l'infrastructure réseau",
+      "Sécurisation complète des services (hardening, durcissement)",
+      "Configuration de pare-feu et règles de filtrage avancées",
+      "Choix et implémentation d'outils cryptographiques adaptés",
       "Gestion des identités et contrôle d'accès (IAM)",
-      "Chiffrement des communications et des données"
+      "Connaissance des différents types d'attaque et contre-mesures",
+      "Sensibilisation efficace des utilisateurs aux bonnes pratiques",
+      "Travail en équipe et compréhension de documentation technique en anglais"
     ],
-    techs: ["Firewall", "PKI", "IPsec", "ACL", "SELinux", "Segmentation"]
+    competences: [
+      "CE 4.01 : Juste compromis entre exigences de sécurité et contraintes d'utilisation",
+      "CE 4.02 : Respect des normes et du cadre juridique",
+      "CE 4.03 : Intégration des dernières technologies",
+      "CE 4.04 : Travail en équipe efficace",
+      "CE 4.05 : Sensibilisation efficace des utilisateurs"
+    ],
+    apprentissages: [
+      "AC 24.01 Cyber : Connaissance et utilisation des bonnes pratiques de cybersécurité",
+      "AC 24.02 Cyber : Mise en œuvre des outils fondamentaux de sécurisation réseau",
+      "AC 24.03 Cyber : Sécurisation complète des services",
+      "AC 24.04 Cyber : Choix des outils cryptographiques adaptés aux besoins fonctionnels",
+      "AC 24.05 Cyber : Connaissance des différents types d'attaque",
+      "AC 24.06 Cyber : Compréhension des documents techniques en anglais"
+    ],
+    techs: ["Firewall", "PKI", "IPsec", "ACL", "SELinux", "Segmentation", "IDS/IPS", "SIEM", "Cryptographie", "OpenSSL", "VPN", "RGPD"]
   },
   "monitor-security": {
     id: "monitor-security",
@@ -74,14 +153,35 @@ const SKILLS_DATA = {
     icon: Eye,
     color: "rpg-crimson",
     requires: ["center"],
-    description: "Surveillance active des flux et détection des anomalies. Analyse d'incidents et réponse aux menaces en temps réel.",
+    description: "Surveillance active et analyse continue du système d'information. Réalisation d'audits de sécurité et gestion complète des incidents de sécurité. Veille permanente, mise à jour des protections, automatisation des tâches de surveillance et respect des contrats de service.",
     details: [
-      "Déploiement de solutions SIEM",
-      "Configuration d'IDS/IPS (Suricata, Snort)",
-      "Analyse de logs et corrélation d'événements",
-      "Forensics et investigation post-incident"
+      "Surveillance active et analyse continue du système d'information",
+      "Réalisation d'audits de sécurité et tests d'intrusion",
+      "Gestion complète des incidents de sécurité (détection, réponse, remédiation)",
+      "Veille permanente sur les menaces et vulnérabilités émergentes",
+      "Réalisation des mises à jour critiques de sécurité",
+      "Automatisation des tâches de surveillance et d'alerting",
+      "Surveillance du comportement du réseau et détection d'anomalies",
+      "Administration des protections contre les logiciels malveillants",
+      "Prise en main et utilisation d'outils de test de pénétration réseau/système",
+      "Déploiement de solutions SIEM et corrélation d'événements",
+      "Configuration d'IDS/IPS (Suricata, Snort) et analyse de logs",
+      "Forensics et investigation post-incident",
+      "Veille au respect des contrats et conformité du SI"
     ],
-    techs: ["SIEM", "IDS/IPS", "Wireshark", "ELK Stack", "Splunk", "Threat Intel"]
+    competences: [
+      "CE 5.01 : Veille permanente sur les menaces et vulnérabilités",
+      "CE 5.02 : Réalisation des mises à jour critiques",
+      "CE 5.03 : Automatisation des tâches de surveillance",
+      "CE 5.04 : Intégration dans une équipe de sécurité",
+      "CE 5.05 : Surveillance du comportement du réseau",
+      "CE 5.06 : Respect des contrats et conformité des obligations du SI"
+    ],
+    apprentissages: [
+      "AC 25.01 Cyber : Administration des protections contre les logiciels malveillants",
+      "AC 25.02 Cyber : Prise en main des outils de test de pénétration réseau/système"
+    ],
+    techs: ["SIEM", "IDS/IPS", "Wireshark", "ELK Stack", "Splunk", "Threat Intel", "Suricata", "Snort", "Metasploit", "Nmap", "Burp Suite", "Antivirus/EDR", "SOC"]
   }
 };
 
@@ -392,6 +492,50 @@ const SkillTree = () => {
                     ))}
                   </ul>
                 </div>
+
+                {selectedSkill.competences && (
+                  <div>
+                    <h4 className="text-rpg-gold font-display text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                      <ChevronRight size={16} /> Composantes Essentielles
+                    </h4>
+                    <ul className="space-y-2">
+                      {selectedSkill.competences.map((comp, i) => (
+                        <motion.li
+                          key={i}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: i * 0.1 }}
+                          className="flex items-start gap-3 text-sm text-rpg-text"
+                        >
+                          <span className={`mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0 ${selectedSkill.color === 'rpg-mana' ? 'bg-rpg-mana' : 'bg-rpg-crimson'}`} />
+                          {comp}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {selectedSkill.apprentissages && (
+                  <div>
+                    <h4 className="text-rpg-gold font-display text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                      <ChevronRight size={16} /> Apprentissages Critiques
+                    </h4>
+                    <ul className="space-y-2">
+                      {selectedSkill.apprentissages.map((ac, i) => (
+                        <motion.li
+                          key={i}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: i * 0.1 }}
+                          className="flex items-start gap-3 text-sm text-rpg-text"
+                        >
+                          <span className={`mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0 ${selectedSkill.color === 'rpg-mana' ? 'bg-rpg-mana' : 'bg-rpg-crimson'}`} />
+                          {ac}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 <div>
                   <h4 className="text-rpg-gold font-display text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
