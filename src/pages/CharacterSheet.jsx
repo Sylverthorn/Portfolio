@@ -5,16 +5,17 @@ import { Shield, Brain, Zap, Terminal, Clock, Award, User } from 'lucide-react';
 const CharacterSheet = () => {
   // Soft Skills as "System Stats"
   const stats = [
-    { label: 'Troubleshooting', value: 95, color: 'bg-rpg-gold' },
-    { label: 'Adaptability', value: 90, color: 'bg-rpg-mana' },
-    { label: 'Team Communication', value: 85, color: 'bg-rpg-crimson' },
-    { label: 'Cyber-Vigilance', value: 88, color: 'bg-rpg-neon' },
+    { label: 'Administration Système', value: 90, color: 'bg-rpg-gold' },
+    { label: 'Réseaux & Sécurité', value: 88, color: 'bg-rpg-mana' },
+    { label: 'Troubleshooting', value: 92, color: 'bg-rpg-crimson' },
+    { label: 'Documentation & Rigueur', value: 85, color: 'bg-purple-500' },
+    { label: 'Travail d\'Équipe', value: 87, color: 'bg-rpg-neon' },
   ];
 
   // Expérience / Formation as "System Logs"
   const timeline = [
-    { year: '2023 - Présent', title: 'BUT Réseaux & Télécoms', subtitle: 'Spécialité Cybersécurité', desc: 'Acquisition des protocoles fondamentaux et défense des infrastructures.' },
-    { year: '2021 - 2023', title: 'Baccalauréat Général', subtitle: 'Maths / NSI', desc: 'Logique algorithmique et bases de la programmation.' },
+    { year: '2023 - 2026', title: 'BUT Réseaux & Télécommunications', subtitle: 'Parcours Cybersécurité - IUT de Colmar', desc: 'Administration système Linux/Windows, sécurité des infrastructures, virtualisation, scripting Python/Bash, et protocoles réseau avancés.' },
+    { year: '2020 - 2023', title: 'Baccalauréat Général', subtitle: 'Spécialités Maths & NSI - Mention Bien', desc: 'Algorithmique, programmation Python, bases de données et architecture des systèmes informatiques.' },
   ];
 
   return (
@@ -43,8 +44,9 @@ const CharacterSheet = () => {
             <div className="text-rpg-gold text-sm font-mono mb-4 tracking-widest">SYSADMIN // SEC_OPS</div>
             
             <div className="grid grid-cols-2 gap-2 text-xs font-mono text-left bg-black/30 p-3 rounded border border-rpg-gold/10">
-              <span className="text-rpg-muted">ORIGIN:</span> <span className="text-right text-rpg-text">FRANCE</span>
-              <span className="text-rpg-muted">CLASS:</span> <span className="text-right text-rpg-text">STUDENT</span>
+              <span className="text-rpg-muted">AGE:</span> <span className="text-right text-rpg-text">21 ANS</span>
+              <span className="text-rpg-muted">LOCATION:</span> <span className="text-right text-rpg-text">COLMAR</span>
+              <span className="text-rpg-muted">PERMIS:</span> <span className="text-right text-rpg-text">B</span>
               <span className="text-rpg-muted">STATUS:</span> <span className="text-right text-rpg-mana">ONLINE</span>
             </div>
             
@@ -70,6 +72,10 @@ const CharacterSheet = () => {
                   <span>ANGLAIS</span>
                   <span className="text-rpg-mana">B2 (TECH)</span>
                </div>
+               <div className="flex justify-between text-sm font-mono">
+                  <span>ALLEMAND</span>
+                  <span className="text-rpg-crimson">A2</span>
+               </div>
             </div>
           </div>
         </div>
@@ -86,11 +92,13 @@ const CharacterSheet = () => {
                 USER_LOGS
              </h3>
              <p className="text-rpg-text leading-relaxed font-sans text-lg">
-                Passionné par l'infrastructure informatique et la sécurité des données. 
-                Mon objectif est de construire des architectures résilientes et de protéger 
-                les actifs numériques contre les menaces émergentes.
+                Étudiant en 3ème année de BUT Réseaux & Télécommunications parcours Cybersécurité à l'IUT de Colmar. 
+                Passionné par l'administration système, la sécurité des infrastructures et les réseaux informatiques.
                 <br/><br/>
-                Je combine une rigueur d'administrateur système avec la curiosité d'un pentester.
+                Spécialisé dans la configuration et la maintenance de serveurs Linux/Windows, la virtualisation, 
+                la supervision réseau et la sécurisation des infrastructures IT.
+                <br/><br/>
+                Mon objectif : construire et sécuriser des architectures réseau robustes tout en maintenant une veille technologique active.
              </p>
           </div>
 

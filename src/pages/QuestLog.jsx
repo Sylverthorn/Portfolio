@@ -5,141 +5,29 @@ import { Server, Shield, Code, Network, Calendar, Award, ExternalLink, Filter, X
 const PROJECTS_DATA = [
   {
     id: 1,
-    title: "Infrastructure Réseau Sécurisée - SAE 5.01",
+    title: "Stage Administration Système & Réseau - COSTRAL",
     category: "network",
     status: "completed",
     difficulty: "expert",
     date: "2025",
-    description: "Déploiement complet d'une infrastructure réseau d'entreprise multi-sites avec segmentation VLAN, routage dynamique OSPF et interconnexion VPN site-to-site.",
-    longDescription: "Ce projet majeur consistait à concevoir et déployer une infrastructure réseau complète pour une entreprise fictive avec trois sites distants. L'architecture devait garantir la haute disponibilité, la sécurité des données et l'optimisation des flux réseau. Le projet incluait la configuration de routeurs Cisco, la mise en place de VLANs pour la segmentation, et l'établissement de tunnels VPN sécurisés entre les sites.",
+    semester: "Stage",
+    description: "Cartographie complète du réseau informatique d'entreprise avec identification des équipements, correction des incohérences, mise en place d'une supervision temps réel et gestion à distance des infrastructures.",
+    longDescription: "Stage de 8 semaines (17 février - 12 avril 2025) chez COSTRAL visant à cartographier et optimiser l'ensemble du réseau informatique de l'entreprise. Méthodologie professionnelle incluant l'observation de la topologie physique, l'analyse des tables ARP/MAC, et la vérification documentaire. Mise en place d'outils de supervision en temps réel avec alertes automatiques et centralisation des documentations pour améliorer la réactivité et la gestion du réseau.",
     achievements: [
-      "Architecture LAN/WAN 3 sites avec 200+ utilisateurs",
-      "Configuration Cisco (Routeurs 2911, Switches Catalyst 3560)",
-      "Mise en place de tunnels VPN IPsec",
-      "Supervision avec Nagios et monitoring SNMP"
+      "Création du schéma synoptique complet du réseau (routeurs, switchs, serveurs)",
+      "Correction et normalisation du plan des prises réseau de l'entreprise",
+      "Établissement de la nomenclature complète des ports de switch",
+      "Déploiement d'une carte dynamique du réseau avec mise à jour automatique",
+      "Centralisation de toutes les documentations réseau en plateforme unique",
+      "Configuration de la gestion à distance via SSH, Web et RDP"
     ],
     images: [
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800"
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
     ],
-    techs: ["Cisco IOS", "OSPF", "VPN IPsec", "VLAN", "Nagios", "GNS3"],
+    techs: ["SSH", "RDP", "SNMP", "Switches", "Supervision", "Documentation", "Topologie", "ARP/MAC", "Alerting"],
     icon: Network,
-    xpGained: "+850 XP"
-  },
-  {
-    id: 2,
-    title: "Système de Détection d'Intrusion - SAE 6.02",
-    category: "cyber",
-    status: "completed",
-    difficulty: "expert",
-    date: "2025",
-    description: "Conception et déploiement d'une solution IDS/IPS avec corrélation d'événements pour la surveillance d'un réseau d'entreprise. Intégration SIEM et réponse aux incidents.",
-    longDescription: "Projet de cybersécurité avancé visant à mettre en place un système complet de détection et prévention d'intrusions. Le système devait non seulement détecter les menaces en temps réel mais aussi corréler les événements pour identifier des attaques complexes. L'intégration avec un SIEM permettait une vue centralisée de la sécurité du réseau.",
-    achievements: [
-      "Déploiement Suricata en mode IPS",
-      "Configuration de règles personnalisées",
-      "Intégration ELK Stack pour la centralisation des logs",
-      "Analyse forensique post-incident"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800"
-    ],
-    techs: ["Suricata", "ELK Stack", "Wireshark", "Snort", "SIEM", "Python"],
-    icon: Shield,
-    xpGained: "+1200 XP"
-  },
-  {
-    id: 3,
-    title: "Automatisation DevOps - Stage 2024",
-    category: "dev",
-    status: "completed",
-    difficulty: "advanced",
-    date: "2024",
-    description: "Développement d'une chaîne CI/CD pour automatiser le déploiement d'infrastructures réseau avec Ansible et GitLab. Scripts Python pour la gestion de configurations.",
-    longDescription: "Stage de 10 semaines axé sur l'automatisation des déploiements réseau. Développement d'une pipeline complète permettant de déployer et configurer automatiquement des équipements réseau à partir de templates Git. Réduction du temps de déploiement de 80% et élimination des erreurs manuelles.",
-    achievements: [
-      "Pipeline GitLab CI/CD complet",
-      "Playbooks Ansible pour 50+ équipements",
-      "Scripts Python de monitoring automatique",
-      "Conteneurisation avec Docker"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
-    ],
-    techs: ["Ansible", "GitLab CI", "Python", "Docker", "Bash", "Git"],
-    icon: Code,
-    xpGained: "+950 XP"
-  },
-  {
-    id: 4,
-    title: "Serveurs Web Haute Disponibilité - SAE 4.01",
-    category: "network",
-    status: "completed",
-    difficulty: "advanced",
-    date: "2024",
-    description: "Mise en place d'une architecture web redondante avec load balancing, clustering de bases de données et plan de reprise d'activité. Garantie de disponibilité 99.9%.",
-    longDescription: "Projet d'infrastructure critique visant à assurer une disponibilité maximale des services web. Architecture redondée sur plusieurs datacenters avec basculement automatique en cas de panne. Mise en place de mécanismes de réplication de données et de tests réguliers du PRA.",
-    achievements: [
-      "Configuration HAProxy pour load balancing",
-      "Cluster MySQL en réplication master-slave",
-      "Monitoring Prometheus + Grafana",
-      "Documentation PRA complète"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
-    ],
-    techs: ["HAProxy", "Nginx", "MySQL", "Linux", "Prometheus", "Grafana"],
-    icon: Server,
-    xpGained: "+780 XP"
-  },
-  {
-    id: 5,
-    title: "Audit de Sécurité - SAE 6.01",
-    category: "cyber",
-    status: "completed",
-    difficulty: "advanced",
-    date: "2025",
-    description: "Réalisation d'un audit de sécurité complet d'une infrastructure IT : tests d'intrusion, analyse de vulnérabilités, durcissement système et recommandations conformité ANSSI.",
-    longDescription: "Audit de sécurité exhaustif d'une infrastructure réelle avec autorisation. Méthodologie professionnelle incluant reconnaissance passive, tests d'intrusion externes et internes, exploitation de vulnérabilités, et élévation de privilèges. Rapport détaillé avec classification des risques et plan de remédiation priorisé.",
-    achievements: [
-      "Pentest réseau avec Kali Linux",
-      "Scan de vulnérabilités (Nessus, OpenVAS)",
-      "Hardening serveurs selon ANSSI",
-      "Rapport d'audit détaillé avec plan d'action"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800",
-      "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800"
-    ],
-    techs: ["Kali Linux", "Metasploit", "Nessus", "Nmap", "Burp Suite", "ANSSI"],
-    icon: Shield,
-    xpGained: "+1100 XP"
-  },
-  {
-    id: 6,
-    title: "Dashboard Supervision Réseau - Projet Personnel",
-    category: "dev",
-    status: "in-progress",
-    difficulty: "intermediate",
-    date: "2026",
-    description: "Application web React pour la visualisation temps réel de métriques réseau. Interface moderne avec graphiques interactifs et alertes automatiques.",
-    longDescription: "Projet personnel en cours de développement visant à créer un dashboard moderne pour la supervision réseau. L'application collecte des métriques en temps réel via SNMP et les affiche dans une interface intuitive. Système d'alertes configurable avec notifications push et email.",
-    achievements: [
-      "Frontend React + Tailwind CSS",
-      "API REST Python/Flask",
-      "Intégration WebSocket pour temps réel",
-      "Système d'alertes par email"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800"
-    ],
-    techs: ["React", "Python", "Flask", "Chart.js", "WebSocket", "SQLite"],
-    icon: Code,
-    xpGained: "+600 XP"
+    xpGained: "+900 XP"
   }
 ];
 
@@ -148,6 +36,18 @@ const CATEGORIES = [
   { id: 'network', label: 'Réseaux', color: 'rpg-mana', icon: Network },
   { id: 'cyber', label: 'Cybersécurité', color: 'rpg-crimson', icon: Shield },
   { id: 'dev', label: 'Développement', color: 'rpg-gold', icon: Code }
+];
+
+const SEMESTERS = [
+  { id: 'all', label: 'Tous' },
+  { id: 'S1', label: 'S1' },
+  { id: 'S2', label: 'S2' },
+  { id: 'S3', label: 'S3' },
+  { id: 'S4', label: 'S4' },
+  { id: 'S5', label: 'S5' },
+  { id: 'S6', label: 'S6' },
+  { id: 'Stage', label: 'Stage' },
+  { id: 'Perso', label: 'Perso' }
 ];
 
 const DIFFICULTY_COLORS = {
@@ -276,11 +176,14 @@ const ProjectCard = ({ project, index, onCardClick }) => {
 
 const QuestLog = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedSemester, setSelectedSemester] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const filteredProjects = selectedCategory === 'all'
-    ? PROJECTS_DATA
-    : PROJECTS_DATA.filter(p => p.category === selectedCategory);
+  const filteredProjects = PROJECTS_DATA.filter(project => {
+    const categoryMatch = selectedCategory === 'all' || project.category === selectedCategory;
+    const semesterMatch = selectedSemester === 'all' || project.semester === selectedSemester;
+    return categoryMatch && semesterMatch;
+  });
 
   const totalXP = PROJECTS_DATA.reduce((acc, p) => {
     const xp = parseInt(p.xpGained.match(/\d+/)[0]);
@@ -342,7 +245,7 @@ const QuestLog = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="flex flex-wrap gap-3 justify-center mb-8"
+          className="flex flex-wrap gap-3 justify-center mb-4"
         >
           {CATEGORIES.map((cat, i) => {
             const Icon = cat.icon;
@@ -368,13 +271,51 @@ const QuestLog = () => {
             );
           })}
         </motion.div>
+
+        {/* Semester Filters */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+          className="flex flex-wrap gap-2 justify-center mb-8"
+        >
+          <div className="flex items-center gap-2 mr-2 text-rpg-muted font-mono text-xs uppercase">
+            <Calendar size={14} />
+            Semestre:
+          </div>
+          {SEMESTERS.map((sem) => {
+            const isActive = selectedSemester === sem.id;
+            const count = sem.id === 'all' 
+              ? PROJECTS_DATA.length 
+              : PROJECTS_DATA.filter(p => p.semester === sem.id).length;
+            
+            return (
+              <motion.button
+                key={sem.id}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setSelectedSemester(sem.id)}
+                className={`px-3 py-1.5 border transition-all duration-300 font-mono text-xs uppercase tracking-wider ${
+                  isActive
+                    ? 'bg-rpg-gold/20 border-rpg-gold text-rpg-gold shadow-[0_0_10px_rgba(255,215,0,0.2)]'
+                    : 'bg-black/40 border-white/20 text-rpg-muted hover:border-white/40'
+                }`}
+              >
+                {sem.label}
+                {count > 0 && (
+                  <span className="ml-1.5 opacity-60">({count})</span>
+                )}
+              </motion.button>
+            );
+          })}
+        </motion.div>
       </div>
 
       {/* Projects Grid */}
       <div className="max-w-7xl mx-auto">
         <AnimatePresence mode="wait">
           <motion.div
-            key={selectedCategory}
+            key={`${selectedCategory}-${selectedSemester}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

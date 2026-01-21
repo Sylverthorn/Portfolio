@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Download } from 'lucide-react';
 
 const Home = () => {
   return (
@@ -40,12 +41,27 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
+          className="space-y-4"
         >
-          <div className="inline-block mt-8">
+          <div className="inline-block">
              <div className="rpg-btn group cursor-pointer animate-pulse">
                 <span className="group-hover:hidden">INITIALIZE INTERFACE</span>
                 <span className="hidden group-hover:inline">ACCESS GRANTED</span>
              </div>
+          </div>
+
+          {/* Download CV Button */}
+          <div className="flex justify-center">
+            <motion.a
+              href="/CV_Korichi_Yanis.pdf"
+              download="CV_Korichi_Yanis.pdf"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-rpg-gold/10 border border-rpg-gold/50 text-rpg-gold hover:bg-rpg-gold/20 hover:border-rpg-gold transition-all duration-300 font-mono text-sm uppercase tracking-wider shadow-[0_0_15px_rgba(255,215,0,0.2)] hover:shadow-[0_0_25px_rgba(255,215,0,0.4)]"
+            >
+              <Download size={18} />
+              Télécharger CV
+            </motion.a>
           </div>
         </motion.div>
       </div>
