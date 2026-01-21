@@ -62,23 +62,23 @@ const SummoningShrine = () => {
     {
       icon: Github,
       label: 'GitHub',
-      value: 'github.com/yanis-korichi',
+      value: 'github.com/Sylverthorn',
       color: 'rpg-mana',
-      link: 'https://github.com'
+      link: 'https://github.com/Sylverthorn'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'Yanis Korichi',
       color: 'rpg-mana',
-      link: 'https://linkedin.com'
+      link: 'https://www.linkedin.com/in/yanis-korichi/'
     },
     {
       icon: FileText,
       label: 'CV / Portfolio',
       value: 'Télécharger PDF',
       color: 'rpg-crimson',
-      link: '#'
+      link: '/CV_Korichi_Yanis.pdf'
     }
   ];
 
