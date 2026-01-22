@@ -15,7 +15,7 @@ const CharacterSheet = () => {
   // Expérience / Formation as "System Logs"
   const timeline = [
     { year: '2023 - 2026', title: 'BUT Réseaux & Télécommunications', subtitle: 'Parcours Cybersécurité - IUT de Colmar', desc: 'Administration système Linux/Windows, sécurité des infrastructures, virtualisation, scripting Python/Bash, et protocoles réseau avancés.' },
-    { year: '2020 - 2023', title: 'Baccalauréat Général', subtitle: 'Spécialités Maths & NSI - Mention Bien', desc: 'Algorithmique, programmation Python, bases de données et architecture des systèmes informatiques.' },
+    { year: '2020 - 2023', title: 'Baccalauréat Général', subtitle: 'Spécialités Maths, SVT & Physique - Mention Bien', desc: 'Fondamentaux scientifiques en mathématiques, sciences de la vie et de la terre, et physique-chimie.' },
   ];
 
   return (

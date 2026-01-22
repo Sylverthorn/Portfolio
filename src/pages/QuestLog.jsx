@@ -22,8 +22,7 @@ const PROJECTS_DATA = [
       "Configuration de la gestion à distance via SSH, Web et RDP"
     ],
     images: [
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
+      "/costral-building.jpg"
     ],
     techs: ["SSH", "RDP", "SNMP", "Switches", "Supervision", "Documentation", "Topologie", "ARP/MAC", "Alerting"],
     icon: Network,

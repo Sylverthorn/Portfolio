@@ -43,12 +43,6 @@ const Home = () => {
           transition={{ delay: 0.5, duration: 1 }}
           className="space-y-4"
         >
-          <div className="inline-block">
-             <div className="rpg-btn group cursor-pointer animate-pulse">
-                <span className="group-hover:hidden">INITIALIZE INTERFACE</span>
-                <span className="hidden group-hover:inline">ACCESS GRANTED</span>
-             </div>
-          </div>
 
           {/* Download CV Button */}
           <div className="flex justify-center">
