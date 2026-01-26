@@ -27,6 +27,156 @@ const PROJECTS_DATA = [
     techs: ["SSH", "RDP", "SNMP", "Switches", "Supervision", "Documentation", "Topologie", "ARP/MAC", "Alerting"],
     icon: Network,
     xpGained: "+900 XP"
+  },
+  {
+    id: 2,
+    title: "Qu'est-ce qu'un bon mot de passe ? - SAE 1",
+    category: "cyber",
+    status: "completed",
+    difficulty: "intermediate",
+    date: "2024",
+    semester: "S1",
+    description: "Projet de sensibilisation à l'hygiène informatique et à la cybersécurité : définir les bonnes pratiques autour des mots de passe et présenter des outils comme KeePass.",
+    longDescription: "Travail en groupe (Khalid Sabane, Alan Akgun) sur la définition d'un bon mot de passe, les vulnérabilités associées et l'utilisation quotidienne de coffres-forts de mots de passe (KeePass). Répartition des recherches, rédaction d'un rapport, réalisation d'une présentation orale et production d'une vidéo pédagogique.",
+    achievements: [
+      "Rapport de projet disponible (PDF)",
+      "Présentation PowerPoint réalisée",
+      "Vidéo de présentation publiée sur YouTube",
+      "Atelier de sensibilisation et démonstration de KeePass"
+    ],
+    images: [
+      "https://prod-files-secure.s3.us-west-2.amazonaws.com/b019be93-48c0-44a5-998e-3970346b0db1/09859547-0f7b-4867-a4ae-c70352c4b315/notion_SAE_1.01_(1).pdf",
+      "https://prod-files-secure.s3.us-west-2.amazonaws.com/b019be93-48c0-44a5-998e-3970346b0db1/b4d672d8-e5b1-4d13-be49-38ecce63d7f1/Sae_hygiene_cyber_scurit.pptx"
+    ],
+    video: "https://youtu.be/93Dj7MuwbiQ",
+    techs: ["Sensibilisation", "KeePass", "Sécurité", "Phishing", "Bonnes pratiques"],
+    icon: Shield,
+    xpGained: "+300 XP"
+  },
+  {
+    id: 3,
+    title: "S'initier aux réseaux informatiques - SAE 1.02",
+    category: "network",
+    status: "completed",
+    difficulty: "intermediate",
+    date: "2024",
+    semester: "S1",
+    description: "Configuration complète d'un réseau d'entreprise en expansion (Rudy and Theodor Company) : préparation, configuration, tests et validation des équipements et services réseau selon cahier des charges.",
+    longDescription: "Mission de technicien réseaux et télécoms pour déployer l'infrastructure réseau d'une succursale. Utilisation d'EVE-NG pour virtualiser et simuler les équipements Cisco, configuration de VLANs, mise en place de services DHCP sous Linux, routage inter-VLAN et capture/analyse de trames avec Wireshark. Respect strict des spécifications du cahier des charges.",
+    achievements: [
+      "Configuration de switches et routeurs Cisco dans EVE-NG",
+      "Structuration d'un réseau d'entreprise avec VLANs (Utilisateurs, Direction, Serveur)",
+      "Déploiement et configuration d'un serveur DHCP sous Linux",
+      "Configuration du routage inter-VLAN",
+      "Capture et analyse de trames 802.1Q avec Wireshark",
+      "Migration du service DHCP du switch vers le serveur Linux",
+      "Plan d'adressage IP complet et documentation technique"
+    ],
+    images: [
+      "/sae102-topology.png",
+      "/sae102-vlans.png"
+    ],
+    documents: [
+      {
+        name: "Prise de notes SAE 1.02",
+        url: "https://prod-files-secure.s3.us-west-2.amazonaws.com/b019be93-48c0-44a5-998e-3970346b0db1/c1f041f8-72b6-4181-a048-53d044006382/SAE_INITIER_AU_RESEAU_67675aa593db475695f30a025d923cee.pdf"
+      }
+    ],
+    techs: ["EVE-NG", "Cisco IOS", "VLAN", "DHCP", "Linux", "Routage inter-VLAN", "Wireshark", "802.1Q", "Trunk"],
+    icon: Network,
+    xpGained: "+450 XP"
+  },
+  {
+    id: 4,
+    title: "Découvrir un dispositif de transmission - SAE 1.03",
+    category: "network",
+    status: "completed",
+    difficulty: "intermediate",
+    date: "2024",
+    semester: "S1",
+    description: "Étude complète des dispositifs de transmission physiques (câbles RJ45, fibre optique) et ondulaires (WiFi). Mesures de puissance, analyse de performance et simulation de réseaux.",
+    longDescription: "Exploration des technologies de transmission en réseau : installation de réseaux câblés et sans fil, mesures de puissance des signaux, analyse de la couverture WiFi avec heatmaps, comparaison des normes 802.11g (2,4 GHz) et 802.11a (5 GHz). Utilisation de Packet Tracer pour la simulation et la validation des configurations avant déploiement réel.",
+    achievements: [
+      "Installation et configuration de réseaux câblés (RJ45, fibre optique)",
+      "Déploiement et optimisation de réseaux WiFi",
+      "Mesures de puissance du signal à différentes distances et à travers différents matériaux",
+      "Création de heatmaps pour visualiser la couverture WiFi",
+      "Comparaison des normes WiFi 802.11g (2,4 GHz) et 802.11a (5 GHz)",
+      "Simulation de réseaux avec Packet Tracer",
+      "Analyse des interférences et optimisation de la couverture"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=800",
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800"
+    ],
+    techs: ["RJ45", "Fibre optique", "WiFi", "802.11g", "802.11a", "Packet Tracer", "Heatmap", "Analyse de signal", "RSSI"],
+    icon: Network,
+    xpGained: "+400 XP"
+  },
+  {
+    id: 5,
+    title: "Se présenter sur internet - SAE 1.04",
+    category: "dev",
+    status: "completed",
+    difficulty: "intermediate",
+    date: "2024",
+    semester: "S1",
+    description: "Création d'un site web de présentation personnelle et d'un centre d'intérêt avec traduction anglaise. Réflexion sur l'identité numérique et les traces sur internet.",
+    longDescription: "Développement d'un site web complet en HTML/CSS hébergé sur GitHub Pages. Construction d'une page de descriptif personnel présentant compétences, parcours académique et objectifs professionnels. Création d'une page dédiée à un centre d'intérêt avec système de traduction français/anglais intégré. Utilisation de VSCode et déploiement via GitHub Pages.",
+    achievements: [
+      "Réflexion approfondie sur l'identité numérique et les traces internet",
+      "Développement d'une page de présentation personnelle complète",
+      "Création d'une page de centre d'intérêt avec traduction bilingue (FR/EN)",
+      "Déploiement du site sur GitHub Pages",
+      "Versionnement du code avec GitHub",
+      "Design responsive et interface utilisateur intuitive"
+    ],
+    images: [
+      "/sae104-screenshot.png"
+    ],
+    links: [
+      {
+        name: "Site de présentation personnelle",
+        url: "https://sylverthorn.github.io/SAE-14-KORICHI-YANIS-RT121/"
+      },
+      {
+        name: "Page centre d'intérêt",
+        url: "https://sylverthorn.github.io/SAE-14-KORICHI-YANIS-RT121/index2.html"
+      },
+      {
+        name: "Code source GitHub",
+        url: "https://github.com/Sylverthorn/SAE-14-KORICHI-YANIS-RT121"
+      }
+    ],
+    techs: ["HTML", "CSS", "GitHub", "GitHub Pages", "VSCode", "Responsive Design", "Bilingual"],
+    icon: Code,
+    xpGained: "+350 XP"
+  },
+  {
+    id: 6,
+    title: "Traiter des données - SAE 1.05",
+    category: "cyber",
+    status: "completed",
+    difficulty: "intermediate",
+    date: "2024",
+    semester: "S1",
+    description: "Projets de sécurité réseau et analyse de données : développement d'un script de découverte automatique d'hôtes et simulation d'attaque Man-in-the-Middle à but éducatif.",
+    longDescription: "Deux projets complémentaires en cybersécurité réseau réalisés en collaboration avec Léonard Sero. Projet 1 : script Python/Scapy pour détecter tous les hôtes dans un réseau IP via méthodes actives (ICMP) et passives (ARP). Projet 2 : étude des vulnérabilités de communications réseau par interception et manipulation de données (attaque MITM) dans un cadre éducatif pour comprendre la détection et la prévention.",
+    achievements: [
+      "Développement d'un script de découverte automatique des hôtes réseau",
+      "Implémentation de méthodes de détection active (ICMP) et passive (ARP)",
+      "Création d'un script d'attaque Man-in-the-Middle éducatif",
+      "Maîtrise du module Scapy Python pour manipulation de paquets",
+      "Capture et analyse de trames avec Wireshark",
+      "Étude approfondie des couches Transport, Réseau et Liaison (modèle OSI)",
+      "Renforcement des compétences en programmation et sécurité réseau"
+    ],
+    images: [
+      "/sae105-screenshot.png"
+    ],
+    techs: ["Python", "Scapy", "Wireshark", "ICMP", "ARP", "MITM", "Packet Sniffing", "OSI Model", "Network Security"],
+    icon: Shield,
+    xpGained: "+500 XP"
   }
 ];
 
@@ -145,6 +295,30 @@ const ProjectCard = ({ project, index, onCardClick }) => {
                   ))}
                 </ul>
               </div>
+
+              {/* Links Section */}
+              {project.links && project.links.length > 0 && (
+                <div className="border-t border-white/10 pt-4 mb-4">
+                  <h4 className="text-rpg-gold font-display text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
+                    <ExternalLink size={14} /> Liens
+                  </h4>
+                  <div className="space-y-2">
+                    {project.links.map((link, i) => (
+                      <a
+                        key={i}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-2 text-sm text-rpg-mana hover:text-rpg-gold transition-colors group"
+                      >
+                        <ExternalLink size={14} className="shrink-0" />
+                        <span className="underline">{link.name}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
@@ -461,7 +635,7 @@ const QuestLog = () => {
                   </div>
 
                   {/* Technologies */}
-                  <div>
+                  <div className="mb-6">
                     <h3 className="text-rpg-gold font-display text-lg uppercase tracking-wider mb-3 flex items-center gap-2">
                       <div className="w-8 h-0.5 bg-rpg-gold" />
                       Stack Technique
@@ -480,6 +654,34 @@ const QuestLog = () => {
                       ))}
                     </div>
                   </div>
+
+                  {/* Links Section */}
+                  {selectedProject.links && selectedProject.links.length > 0 && (
+                    <div>
+                      <h3 className="text-rpg-gold font-display text-lg uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <div className="w-8 h-0.5 bg-rpg-gold" />
+                        <ExternalLink size={18} />
+                        Liens & Ressources
+                      </h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {selectedProject.links.map((link, i) => (
+                          <motion.a
+                            key={i}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6 + i * 0.05 }}
+                            className="flex items-center gap-3 p-4 bg-black/40 border-2 border-rpg-mana/30 text-rpg-mana hover:border-rpg-mana hover:bg-rpg-mana/10 transition-all duration-300 group"
+                          >
+                            <ExternalLink size={20} className="shrink-0 group-hover:scale-110 transition-transform" />
+                            <span className="font-mono text-sm group-hover:text-rpg-gold transition-colors">{link.name}</span>
+                          </motion.a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
