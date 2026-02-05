@@ -127,7 +127,23 @@ const SummoningShrine = () => {
                 Formulaire de Transmission
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form 
+                name="contact" 
+                method="POST" 
+                data-netlify="true" 
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit} 
+                className="space-y-4"
+              >
+                {/* Champ caché pour Netlify */}
+                <input type="hidden" name="form-name" value="contact" />
+                
+                {/* Honeypot anti-spam (caché visuellement) */}
+                <div style={{ display: 'none' }}>
+                  <label>
+                    Ne pas remplir si vous êtes humain : <input name="bot-field" />
+                  </label>
+                </div>
                 
                 {/* Name Input */}
                 <div>

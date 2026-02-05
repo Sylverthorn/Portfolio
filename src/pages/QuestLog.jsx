@@ -177,6 +177,134 @@ const PROJECTS_DATA = [
     techs: ["Python", "Scapy", "Wireshark", "ICMP", "ARP", "MITM", "Packet Sniffing", "OSI Model", "Network Security"],
     icon: Shield,
     xpGained: "+500 XP"
+  },
+  {
+    id: 7,
+    title: "Construire un réseau informatique pour une petite structure - SAÉ 2.01",
+    category: "network",
+    status: "completed",
+    difficulty: "expert",
+    date: "2025",
+    semester: "S2",
+    description: "Conception, segmentation, sécurisation et interconnexion d'une infrastructure réseau d'entreprise avec services (FTP, Web), NAT, routage RIP et sécurisation par ACL/port-security.",
+    longDescription: "Projet pratique complet de construction d'un réseau pour une petite structure : définition d'un plan d'adressage structuré (/30, /29, /25), création de VLANs, routage inter-VLAN sur switch L3, configuration de RIP v2, mise en place de DHCP, NAT/PAT, déploiement de services (Apache, vsftpd, rsync) et sécurisation via ACLs, port-security et DMZ. Tests et simulation réalisés sous GNS3.",
+    achievements: [
+      "Conception et segmentation du réseau via VLANs (Administration, Développeurs, Admins, PROD)",
+      "Plan d'adressage IP structuré et interconnexions point-à-point en /30",
+      "Routage inter-VLAN et configuration RIP v2",
+      "Déploiement de services : Apache2, vsftpd, rsync et configuration DHCP par VLAN",
+      "Configuration NAT/PAT pour accès Internet des VLANs internes",
+      "Sécurisation réseau : ACLs, port-security (sticky/restrict), DMZ et configuration STP optimisée",
+      "Interconnexion avec une maquette externe via GNS3 (Cloud) et routes statiques"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
+    ],
+    techs: ["VLAN", "RIP v2", "NAT/PAT", "DHCP", "Apache2", "vsftpd", "rsync", "ACL", "port-security", "GNS3", "Linux"],
+    icon: Network,
+    xpGained: "+650 XP"
+  },
+  {
+    id: 8,
+    title: "Mettre en place une solution informatique pour l'entreprise - SAE 2.03",
+    category: "dev",
+    status: "completed",
+    difficulty: "advanced",
+    date: "2025",
+    semester: "S2",
+    description: "Développement d'une interface web Django de gestion des absences scolaires avec base de données MySQL, hébergement sur VMs Linux/Windows et génération de documents PDF.",
+    longDescription: "Conception et déploiement d'une solution complète de gestion des absences pour une école : développement d'un site web Django permettant la consultation, l'insertion et la manipulation de données (élèves, professeurs, cours, absences). Base de données MySQL hébergée sur VM Windows, site Django hébergé sur VM Linux avec Apache2. Implémentation du CRUD complet, import/export de fichiers d'absences, validation et justification, génération de listes PDF par étudiant.",
+    achievements: [
+      "Développement complet d'une application web Django avec architecture MVC",
+      "Conception et implémentation d'une base de données MySQL (groupes, étudiants, professeurs, cours, absences)",
+      "Configuration de VMs : MySQL sur Windows Server et Django sur Linux avec Apache2",
+      "Implémentation du CRUD pour toutes les entités (Create, Read, Update, Delete)",
+      "Système d'import d'absences via fichiers structurés avec documentation utilisateur",
+      "Génération automatique de listes d'absences et de PDF récapitulatifs par étudiant",
+      "Gestion collaborative avec GitHub, planification Gantt et LiveShare VSCode"
+    ],
+    images: [
+      "/sae203-screenshot1.png",
+      "/sae203-screenshot2.png"
+    ],
+    links: [
+      {
+        name: "Repository GitHub",
+        url: "https://github.com/Link67000/SAE_WEBdynamique.git"
+      }
+    ],
+    techs: ["Django", "Python", "MySQL", "Apache2", "Linux", "HTML", "CSS", "PDF Generation", "CRUD", "VM"],
+    icon: Code,
+    xpGained: "+700 XP"
+  },
+  {
+    id: 9,
+    title: "SAE Intégrative - SAE 2.04",
+    category: "network",
+    status: "completed",
+    difficulty: "advanced",
+    date: "2025",
+    semester: "S2",
+    description: "Projet pluridisciplinaire combinant réseau VLAN/NAT, téléphonie IP (Linphone/SIP) et développement web Django avec communication MQTT pour créer une infrastructure complète d'entreprise.",
+    longDescription: "SAE Intégrative combinant compétences en réseau, téléphonie IP et développement web pour concevoir une infrastructure complète et fonctionnelle. Vision globale des systèmes de communication modernes en entreprise réalisée en autonomie : création d'un réseau d'entreprise segmenté avec VLANs, routeur NAT pour accès Internet, configuration de téléphones SIP via Linphone pour communications VoIP inter-réseaux, et développement d'une application web Django affichant en temps réel des données IoT récupérées via MQTT. Projet illustrant l'interconnexion entre différents domaines de l'informatique dans des environnements professionnels intégrés.",
+    achievements: [
+      "Création et segmentation de réseau avec VLAN pour isoler les services",
+      "Configuration de routeur avec NAT et routage inter-VLAN pour accès Internet",
+      "Mise en place d'une infrastructure de téléphonie IP avec Linphone (SIP/VoIP)",
+      "Configuration de communications SIP intra-réseau et inter-réseaux",
+      "Développement d'une application web Python/Django avec interface temps réel",
+      "Intégration de capteurs IoT via protocole MQTT pour visualisation dynamique",
+      "Collaboration et versioning sur GitHub avec travail en équipe"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800"
+    ],
+    links: [
+      {
+        name: "Repository GitHub",
+        url: "https://github.com/Sylverthorn/SAE-INTEGRATIVE-WEB"
+      }
+    ],
+    techs: ["VLAN", "NAT", "Linphone", "SIP", "VoIP", "Django", "Python", "MQTT", "IoT", "GitHub", "Routing"],
+    icon: Network,
+    xpGained: "+750 XP"
+  },
+  {
+    id: 10,
+    title: "Développer des applications communicantes - SAE 3.02",
+    category: "dev",
+    status: "completed",
+    difficulty: "advanced",
+    date: "2024",
+    semester: "S3",
+    description: "Conception d'une architecture Client/Serveur multi-serveurs avec load balancing pour l'exécution distribuée de programmes. Système avec serveur maître, serveurs secondaires, interfaces PyQt et support multi-langages (Java, Python, C, C++).",
+    longDescription: "Architecture Client/Serveur avancée permettant l'exécution de programmes soumis par des clients via un système de répartition de charge. Le serveur maître gère les connexions clients et distribue les tâches aux serveurs secondaires selon leur disponibilité CPU et capacité. Communication par sockets, interfaces graphiques PyQt pour client et serveur, gestion de file d'attente avec timeout 3min, support de 4 langages de programmation. Possibilité de lancer les serveurs secondaires via multi-processing local ou manuellement sur machines distantes. Système de load balancing intelligent vérifiant la disponibilité des serveurs avant attribution des tâches. Projet de 60h incluant conception UML, développement, tests et documentation complète.",
+    achievements: [
+      "Architecture Client/Serveur multi-serveurs avec serveur maître et serveurs secondaires",
+      "Implémentation de load balancing intelligent pour répartition optimale des tâches",
+      "Développement d'interfaces graphiques PyQt pour client et serveur avec logs en temps réel",
+      "Communication réseau via sockets entre tous les composants du système",
+      "Support de 4 langages de programmation (Java, Python, C, C++) pour exécution de code",
+      "Gestion de file d'attente avec vérification CPU et limite de tâches par serveur",
+      "Système de multi-processing via subprocess pour lancement automatique des serveurs secondaires",
+      "Timeout de 3min par script pour éviter les boucles infinies et blocages",
+      "Conception UML complète et documentation technique détaillée"
+    ],
+    images: [
+      "/sae302-screenshot1.png",
+      "/sae302-screenshot2.png"
+    ],
+    links: [
+      {
+        name: "Repository GitHub",
+        url: "https://github.com/Sylverthorn/GIT-R309-SAE302"
+      }
+    ],
+    techs: ["Python", "PyQt", "Sockets", "Load Balancing", "Multi-processing", "Client/Serveur", "Java", "C", "C++", "Subprocess", "Threading", "UML"],
+    icon: Code,
+    xpGained: "+800 XP"
   }
 ];
 
