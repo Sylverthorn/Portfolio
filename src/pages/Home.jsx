@@ -31,10 +31,6 @@ const Home = () => {
           </h1>
           
           <div className="h-px w-64 bg-gradient-to-r from-transparent via-rpg-gold to-transparent mx-auto mb-6"></div>
-          
-          <p className="text-xl md:text-2xl text-rpg-text font-display uppercase tracking-widest max-w-3xl mx-auto leading-relaxed opacity-80">
-            System Guardian <span className="text-rpg-gold mx-2">//</span> Data Protector <span className="text-rpg-gold mx-2">//</span> Architect
-          </p>
         </motion.div>
 
         <motion.div
