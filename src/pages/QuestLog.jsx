@@ -305,6 +305,110 @@ const PROJECTS_DATA = [
     techs: ["Python", "PyQt", "Sockets", "Load Balancing", "Multi-processing", "Client/Serveur", "Java", "C", "C++", "Subprocess", "Threading", "UML"],
     icon: Code,
     xpGained: "+800 XP"
+  },
+  {
+    id: 11,
+    title: "SAÉ 3.Cyber.03 | Concevoir un réseau informatique sécurisé multi-sites",
+    category: "network",
+    status: "completed",
+    difficulty: "expert",
+    date: "2025",
+    semester: "S3",
+    description: "Conception et déploiement d'une architecture réseau d'entreprise multi-sites avec MPLS-VPN, haute disponibilité et services critiques. Projet réaliste pour UC Exchange et ABC Conseil.",
+    longDescription: "Projet réaliste simulant l'infrastructure réseau de deux entreprises e-commerce (UC Exchange et ABC Conseil) réparties sur plusieurs sites. Gestion complète de l'administration LAN avec création d'un plan d'adressage structuré, mise en place de VLANs et routage inter-VLAN. Configuration du protocole VRRP pour la haute disponibilité et implémentation du protocole MSTP pour tolérance aux pannes. Déploiement de services réseau : DNS (Windows Server 2019 + secondaire Linux) avec zones sécurisées DNSSEC, serveur Web Apache (site public + intranet), serveur Mail SMTP/IMAP, Active Directory pour gestion centralisée. Infrastructure MPLS-VPN répartie sur trois AS avec RIP (AS 10/20), OSPF (AS 30), BGP/MP-BGP avec Route Reflector, VRF spécifiques par client et NAT statique pour exposition Web vers Internet.",
+    achievements: [
+      "Création d'un plan d'adressage structuré pour plusieurs sites",
+      "Mise en place de VLANs et routage inter-VLAN avec architecture hiérarchique",
+      "Configuration du protocole VRRP pour la haute disponibilité des passerelles",
+      "Implémentation du protocole MSTP pour tolérance aux pannes sans boucle réseau",
+      "Déploiement de serveurs DNS (Windows Server 2019 + secondaire Linux) avec DNSSEC",
+      "Installation et configuration de serveurs Web Apache (site public + intranet)",
+      "Configuration de serveurs Mail SMTP et IMAP avec tests TELNET",
+      "Mise en place d'Active Directory pour gestion centralisée des utilisateurs",
+      "Configuration d'une infrastructure MPLS-VPN sur trois AS avec RIP, OSPF et BGP",
+      "Implémentation de MP-BGP avec Route Reflector pour échange VPNv4",
+      "Configuration de VRF spécifiques pour ABC_Conseil et UC_Exchange",
+      "Traduction d'adresses NAT et PAT pour accès Internet et exposition publique",
+      "Sécurisation complète avec règles de pare-feu et isolation des flux"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
+    ],
+    techs: ["VLAN", "VRRP", "MSTP", "MPLS-VPN", "BGP", "OSPF", "RIP", "DNS", "DNSSEC", "Apache", "Active Directory", "NAT/PAT", "VRF", "Route-Reflector", "Windows Server"],
+    icon: Network,
+    xpGained: "+900 XP"
+  },
+  {
+    id: 12,
+    title: "SAÉ 3.Cyber.04 | Découvrir le pentesting",
+    category: "cyber",
+    status: "completed",
+    difficulty: "advanced",
+    date: "2025",
+    semester: "S3",
+    description: "Découverte du pentesting via la plateforme Root Me avec résolution de défis pratiques sur les vulnérabilités web, système, réseau et cryptographie. Apprentissage actif des techniques d'exploitation de failles.",
+    longDescription: "SAÉ orientée cybersécurité offensive visant à découvrir le pentesting à travers la plateforme Root Me. Réalisation d'un maximum de défis pour comprendre les différentes vulnérabilités affectant systèmes, sites web et applications. Apprentissage actif en manipulant directement les failles pour mieux les reconnaître et les corriger. Exploration de plusieurs catégories : Web (Client & Server), Cryptanalyse, Réseau, Système & Exploitation, et Forensic. Utilisation d'outils professionnels comme Burp Suite pour interception HTTP, Wireshark pour analyse réseau, nmap pour reconnaissance. Développement de scripts Python et Bash pour automatisation d'attaques. Approche pédagogique permettant de se mettre dans la peau d'un attaquant pour mieux comprendre les bonnes pratiques de sécurité à appliquer.",
+    achievements: [
+      "Compréhension des concepts fondamentaux du pentesting et méthodologie d'audit",
+      "Résolution de défis Root Me : Web Client/Server, Cryptanalyse, Réseau, Système, Forensic",
+      "Maîtrise de Burp Suite pour interception et modification de requêtes HTTP",
+      "Utilisation de Wireshark pour analyse réseau et capture de paquets",
+      "Reconnaissance réseau avec nmap et identification de services vulnérables",
+      "Identification et exploitation de failles SQL Injection (SQLi)",
+      "Exploitation de vulnérabilités XSS (Cross-Site Scripting)",
+      "Maîtrise des attaques par Command Injection sur systèmes Unix/Linux",
+      "Exploitation de Buffer Overflow et corruption mémoire",
+      "Développement de scripts Python et Bash pour automatisation d'attaques",
+      "Approfondissement de Linux et ligne de commande en contexte sécurité offensive",
+      "Renforcement de la culture sécurité et esprit critique face aux systèmes"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800"
+    ],
+    links: [
+      {
+        name: "Plateforme Root Me",
+        url: "https://www.root-me.org/"
+      }
+    ],
+    techs: ["Root Me", "Burp Suite", "Wireshark", "nmap", "Python", "Bash", "Linux", "SQL Injection", "XSS", "Command Injection", "Buffer Overflow", "Cryptanalysis", "Forensic", "Pentest"],
+    icon: Shield,
+    xpGained: "+700 XP"
+  },
+  {
+    id: 13,
+    title: "SAÉ 4.Cyber.01 | Sécuriser un système d'information",
+    category: "cyber",
+    status: "completed",
+    difficulty: "expert",
+    date: "2025",
+    semester: "S4",
+    description: "Conception et déploiement d'un système d'information d'entreprise sécurisé avec services critiques : annuaire LDAP, serveur NFS, messagerie chiffrée, VPN nomade et infrastructure IGC complète.",
+    longDescription: "Projet de conception d'un système d'information sécurisé pour une entreprise, intégrant des services critiques comme un annuaire LDAP, un serveur de fichiers NFS, une messagerie sécurisée et un accès VPN pour les postes nomades. Architecture complète incluant pare-feu iptables pour filtrage des flux, serveur LDAP (LDAPS) pour authentification centralisée, serveur NFS pour partage sécurisé, serveurs Postfix (SMTP) et Dovecot (IMAP) pour messagerie, serveur DNS interne BIND9, serveur VPN OpenVPN avec accès distant chiffré, et infrastructure de gestion de certificats (IGC) pour authentifier les postes et chiffrer les services. Chaque composant configuré avec un souci de sécurité : trafic limité, authentification forte, utilisation de TLS et segmentation réseau. Virtualisation complète sous VirtualBox, présentation technique et démonstration fonctionnelle pour validation du projet.",
+    achievements: [
+      "Création d'une architecture réseau d'entreprise complète et sécurisée",
+      "Déploiement et configuration de serveur LDAPS avec base initialisée par fichiers LDIF",
+      "Mise en place d'un serveur NFS avec authentification LDAP et montage client contrôlé",
+      "Configuration de serveurs Postfix (SMTP) et Dovecot (IMAP) avec authentification LDAP",
+      "Sécurisation de la messagerie avec TLS et tests via client mail",
+      "Déploiement de serveur DNS interne avec BIND9",
+      "Configuration de serveur OpenVPN avec certificats client/serveur et filtrage dédié",
+      "Mise en place d'une Infrastructure de Gestion de Certificats (IGC) complète",
+      "Génération et déploiement de certificats racine, serveur et client pour tous les services",
+      "Configuration de pare-feu iptables pour filtrage et segmentation réseau",
+      "Sécurisation de serveur Web Apache/Nginx avec TLS et load balancer",
+      "Virtualisation complète de l'infrastructure sous VirtualBox",
+      "Documentation technique détaillée et présentation fonctionnelle du système"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800",
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800"
+    ],
+    techs: ["LDAP", "LDAPS", "NFS", "Postfix", "Dovecot", "OpenVPN", "DNS", "BIND9", "iptables", "TLS", "IGC", "Certificats", "Apache", "Nginx", "Load Balancer", "VirtualBox", "Linux"],
+    icon: Shield,
+    xpGained: "+850 XP"
   }
 ];
 

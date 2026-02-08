@@ -14,5 +14,40 @@
     "reward": "Expérience Windows +100",
     "status": "in_progress",
     "tech": ["Windows Server", "PowerShell", "AD DS"]
+  },
+  {
+    "id": 3,
+    "title": "SAÉ 3.Cyber.03 | Réseau Multi-Sites Sécurisé",
+    "description": "Conception et déploiement d'une architecture réseau d'entreprise multi-sites avec MPLS-VPN, haute disponibilité et services critiques.",
+    "reward": "Expérience Infrastructure Réseau +150",
+    "status": "completed",
+    "semester": "S3",
+    "tech": ["VLAN", "VRRP", "MSTP", "MPLS-VPN", "BGP", "OSPF", "RIP", "DNS", "Active Directory", "NAT/PAT"],
+    "details": {
+      "context": "Projet réaliste simulant l'infrastructure réseau de deux entreprises e-commerce (UC Exchange et ABC Conseil) réparties sur plusieurs sites. Gestion complète de l'administration LAN, services réseau, interconnexion MPLS-VPN et haute disponibilité.",
+      "competences": [
+        "Création d'un plan d'adressage structuré pour plusieurs sites",
+        "Mise en place de VLANs et routage inter-VLAN",
+        "Configuration du protocole VRRP pour la haute disponibilité",
+        "Implémentation du protocole MSTP pour tolérance aux pannes",
+        "Déploiement de services réseau : DNS, Web, Mail, Active Directory",
+        "Configuration d'une infrastructure MPLS-VPN avec BGP, RIP et OSPF",
+        "Traduction d'adresses NAT et PAT pour l'accès public"
+      ],
+      "modules": [
+        {
+          "name": "Administration des Réseaux LANs",
+          "content": "Architecture hiérarchique avec VLANs par service (informatique, direction, finance, serveurs). Routage inter-VLAN activé, translation PAT pour communication extérieure. Protocole VRRP pour haute disponibilité et MSTP pour redondance sans boucle."
+        },
+        {
+          "name": "Services Réseaux",
+          "content": "DNS (Windows Server 2019 + secondaire Linux) avec DNSSEC, serveur Web Apache (site public + intranet), serveur Mail SMTP/IMAP, Active Directory pour gestion centralisée. Configuration complète des règles de pare-feu."
+        },
+        {
+          "name": "Interconnexion MPLS-VPN",
+          "content": "Infrastructure MPLS-VPN sur trois AS : RIP (AS 10/20), OSPF (AS 30), BGP/MP-BGP avec Route Reflector. VRF spécifiques par client (ABC_Conseil et UC_Exchange). NAT statique pour exposition Web vers Internet."
+        }
+      ]
+    }
   }
 ]
